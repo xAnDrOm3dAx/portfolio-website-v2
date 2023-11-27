@@ -14,8 +14,6 @@ html {
 }
 
 .page-wrapper > img {
-  position: absolute;
-  z-index: -1;
 }
 
 p {
@@ -24,30 +22,39 @@ p {
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: 20px 1fr 20px;
+  grid-template-columns: auto clamp(350px, 40%, 640px) auto;
   grid-template-rows: 80px auto 1fr;
+
+  /* @media (min-width: 600px) {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 80px auto 1fr;
+  } */
 }
 
 header {
-  grid-column: 1 / -1;
+  grid-column: 2 / 3;
   grid-row: 1 / 2;
-  margin: 20px 10px;
-  padding: 0 10px;
+  /* margin: 20px 10px; */
+  /* padding: 0 10px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 5px 10px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  position: relative;
-  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.18); */
 
   & a {
     font-size: var(--secondary-heading-font-size);
   }
+
+  /* @media (min-width: 600px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 20px 0;
+  } */
 }
 
 .nav-container {
@@ -75,8 +82,12 @@ main {
 }
 
 .projects-showcase {
+  & h2 {
+    margin-bottom: 10px;
+  }
+
   .selected-projects {
-    margin: 15px 0;
+    margin-bottom: 35px;
     border-radius: 10px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.2);
