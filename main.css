@@ -13,17 +13,14 @@ html {
   font-family: var(--primary-font-family);
 }
 
-.page-wrapper > img {
-}
-
 p {
   font-family: var(--secondary-font-family);
 }
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: auto clamp(350px, 40%, 640px) auto;
-  grid-template-rows: 80px auto 1fr;
+  grid-template-columns: auto clamp(350px, 90%, 640px) auto;
+  /* grid-template-rows: 80px auto 1fr; */
 
   /* @media (min-width: 600px) {
     grid-template-columns: 1fr 2fr 1fr;
@@ -34,7 +31,7 @@ p {
 header {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  /* margin: 20px 10px; */
+  margin: 20px 0px;
   /* padding: 0 10px; */
   display: flex;
   justify-content: space-between;
