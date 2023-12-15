@@ -27,21 +27,14 @@ h3 {
 section {
   border-bottom: 2px solid #dbdbdb;
 
-  p {
+  & p {
     font-family: var(--secondary-font-family);
-    margin: 1.25rem 0;
   }
 }
 
 .page-container {
   display: grid;
   grid-template-columns: auto clamp(350px, 90%, 640px) auto;
-  /* grid-template-rows: 80px auto 1fr; */
-
-  /* @media (min-width: 600px) {
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 80px auto 1fr;
-  } */
 }
 
 header {
@@ -87,14 +80,33 @@ main {
 
   .selected-projects {
     margin-bottom: 1.87rem;
-    border-radius: 10px;
-    padding: 15px;
+    border-radius: 22px;
+    padding: 12px;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 5px 10px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+
+    .link-container {
+      @media (min-width: 768px) {
+        display: flex;
+        gap: 1.25rem;
+      }
+
+      & figure {
+        flex: 1;
+      }
+
+      & div {
+        flex: 1;
+      }
+    }
+
+    & img {
+      border-radius: 10px;
+      object-fit: contain;
+    }
 
     & h3 {
       margin: 1rem 0 0;
