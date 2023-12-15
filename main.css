@@ -24,12 +24,13 @@ h3 {
   font-size: 1.2rem;
 }
 
+p {
+  font-family: var(--secondary-font-family);
+  margin: 0 0 1.25rem;
+}
+
 section {
   border-bottom: 2px solid #dbdbdb;
-
-  & p {
-    font-family: var(--secondary-font-family);
-  }
 }
 
 .page-container {
@@ -83,7 +84,7 @@ main {
     border-radius: 22px;
     padding: 12px;
     background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 5px 10px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 0 16px 3px #ccc;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -100,6 +101,9 @@ main {
 
       & div {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
 
@@ -108,8 +112,8 @@ main {
       object-fit: contain;
     }
 
-    & h3 {
-      margin: 1rem 0 0;
+    & p {
+      margin: 0;
     }
   }
 }
@@ -141,11 +145,14 @@ figure {
   .profile-photo {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border: 1px solid #ccc;
+    border-radius: 34px;
+    background-color: #dbcdbc;
+    box-shadow: 0 0 12px 3px #ccc;
   }
 
   .photo-caption {
-    margin: 0.6rem 0 0;
+    margin: 0.6rem 0 1.25rem;
     font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
@@ -154,6 +161,6 @@ figure {
 
 /* Contact Page */
 a span {
-  color: rgb(119, 11, 195);
+  color: #770bc3;
   font-weight: 600;
 }
