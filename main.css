@@ -88,9 +88,14 @@ main {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 250ms ease;
+
+    &:hover {
+      box-shadow: 0 0 18px 14px #3c3c4033;
+    }
 
     .link-container {
-      @media (min-width: 768px) {
+      @media (min-width: 480px) {
         display: flex;
         gap: 1.25rem;
       }
@@ -114,6 +119,7 @@ main {
 
     & p {
       margin: 0;
+      line-height: 1.5;
     }
   }
 }
