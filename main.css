@@ -157,7 +157,7 @@ a span {
 /* Media Queries */
 @media (min-width: 768px) {
   h3 {
-    margin: 0 0 1.25rem;
+    margin: 0 0 0.6rem;
   }
 
   .link-container {
@@ -173,6 +173,10 @@ a span {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    & p {
+      margin: 0;
     }
   }
 }
