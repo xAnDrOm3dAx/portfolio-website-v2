@@ -102,8 +102,6 @@ main {
     }
 
     .link-container {
-      text-align: center;
-
       & figure {
         display: flex;
         justify-content: center;
