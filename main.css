@@ -85,7 +85,7 @@ main {
   .selected-projects {
     margin-bottom: 1.87rem;
     border-radius: 22px;
-    padding: 1rem;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 16px 3px #ccc;
     backdrop-filter: blur(4px);
@@ -95,6 +95,10 @@ main {
 
     &:hover {
       box-shadow: 0 0 18px 14px #3c3c4033;
+    }
+
+    & p {
+      margin: 0;
     }
 
     .link-container {
