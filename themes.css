@@ -1,0 +1,40 @@
+/* Variables */
+
+/* :root {
+  --clr-light: #fdffc4;
+  --clr-dark: #00332a;
+  --clr-primary: #dbffa2;
+  --clr-secondary: #c3fcf2;
+  --clr-accent: #ff7750;
+
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+
+  --ff-title: "Playfair Display", serif;
+  --ff-body: "Assistant", sans-serif;
+} */
+
+/* :root[color-theme="theme-1"] {
+}
+
+:root[color-theme="theme-2"] {
+} */
+
+:root {
+  /* Light Mode */
+  --primary-text-color: #000;
+  --primary-background-color: #ffff;
+
+  /* Dark-Mode */
+  --secondary-text-color: #f5f5f5;
+  --secondary-background-color: #0e182f;
+
+  /* Typography */
+  --primary-font-family: "Roboto", sans-serif;
+  --secondary-font-family: "Raleway", sans-serif;
+}
+
+.dark-mode {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+}
