@@ -1,7 +1,7 @@
 body {
   font-family: var(--primary-font-family);
-  /* max-width: 640px; */
-  /* margin: 0 auto; */
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 .page-container {
@@ -33,6 +33,10 @@ p {
 
 section {
   border-bottom: 2px solid #dbdbdb;
+}
+
+svg {
+  color: var(--svg-color);
 }
 
 header {
@@ -83,11 +87,11 @@ main {
     margin-bottom: 1.87rem;
     border-radius: 22px;
     padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.2);
+    background-color: var(--project-card-color);
     box-shadow: 0 0 16px 3px #ccc;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid #ffffff2e;
     transition: all 250ms ease;
 
     &:hover {
@@ -105,8 +109,9 @@ main {
         align-items: center;
       }
 
-      & img {
+      & svg {
         width: 60%;
+        height: 60%;
       }
     }
   }
@@ -121,13 +126,14 @@ footer {
     margin: 1.25rem 0 0.6rem;
   }
 
-  .icon-links {
+  .icon-links-wrapper {
     display: flex;
     flex-direction: row;
     gap: 20px;
 
-    & a {
-      width: 35px;
+    svg {
+      color: var(--svg-color);
+      width: 30px;
       height: auto;
     }
   }
@@ -172,8 +178,9 @@ a span {
       flex: 1;
     }
 
-    & img {
+    & svg {
       width: 100% !important;
+      height: 100% !important;
     }
 
     & div {
