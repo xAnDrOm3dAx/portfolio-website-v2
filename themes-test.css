@@ -1,0 +1,18 @@
+:root {
+  --primary-font-family: "Roboto", sans-serif;
+  --secondary-font-family: "Raleway", sans-serif;
+}
+
+[data-theme="light"] {
+  --text-color: #000;
+  --background-color: #f5f5f5;
+  --svg-color: #000;
+  --project-card-color: #f5f5f5;
+}
+
+[data-theme="dark"] {
+  --text-color: #f5f5f5;
+  --background-color: #1e3137;
+  --svg-color: #f5f5f5;
+  --project-card-color: #1e3137;
+}
