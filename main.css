@@ -88,14 +88,13 @@ main {
     border-radius: 22px;
     padding: 1.5rem;
     background-color: var(--project-card-color);
-    box-shadow: 0 0 16px 3px #ccc;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid #ffffff2e;
+    border: var(--project-card-border-color);
     transition: all 250ms ease;
 
     &:hover {
-      box-shadow: 0 0 18px 14px #3c3c4033;
+      box-shadow: 0 0 16px 3px var(--box-shadow-color);
     }
 
     & p {
@@ -143,11 +142,9 @@ footer {
 figure {
   .profile-photo {
     width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
+    border: 1px solid var(--project-card-border-color);
     border-radius: 34px;
-    background-color: #dbcdbc;
-    box-shadow: 0 0 12px 3px #ccc;
+    box-shadow: 0 0 12px 3px var(--box-shadow-color);
   }
 
   .photo-caption {
