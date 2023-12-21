@@ -8,16 +8,16 @@ if (darkMode === null) {
 }
 
 const enableDarkMode = () => {
-  themeToggleLight.style.display = "block";
-  themeToggleDark.style.display = "none";
+  themeToggleLight.style.display = "none"; // Hide sun icon
+  themeToggleDark.style.display = "flex"; // Show moon icon
   document.documentElement.classList.remove("light");
   document.documentElement.classList.add("dark");
   localStorage.setItem("darkMode", "enabled");
 };
 
 const disableDarkMode = () => {
-  themeToggleLight.style.display = "none";
-  themeToggleDark.style.display = "block";
+  themeToggleLight.style.display = "flex"; // Show sun icon
+  themeToggleDark.style.display = "none"; // Hide moon icon
   document.documentElement.classList.remove("dark");
   document.documentElement.classList.add("light");
   localStorage.setItem("darkMode", "disabled");
@@ -26,28 +26,18 @@ const disableDarkMode = () => {
 if (darkMode === "enabled") {
   enableDarkMode();
 } else {
-  themeToggleLight.style.display = "none";
-  themeToggleDark.style.display = "block";
+  themeToggleLight.style.display = "flex";
+  themeToggleDark.style.display = "none";
 }
 
 themeToggleLight.addEventListener("click", () => {
   darkMode = localStorage.getItem("darkMode");
-  disableDarkMode();
-  // if (darkMode !== "enabled") {
-  //   enableDarkMode();
-  // } else {
-  //   disableDarkMode();
-  // }
+  enableDarkMode();
 });
 
 themeToggleDark.addEventListener("click", () => {
   darkMode = localStorage.getItem("darkMode");
-  enableDarkMode();
-  // if (darkMode !== "enabled") {
-  //   enableDarkMode();
-  // } else {
-  //   disableDarkMode();
-  // }
+  disableDarkMode();
 });
 
 console.log(darkMode);
