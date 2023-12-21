@@ -1,37 +1,33 @@
-let darkMode = localStorage.getItem("darkMode");
 const darkModeToggle = document.querySelector("#dark-mode-toggle");
 
-const enableDarkMode = () => {
-  document.body.classList.add("dark-mode");
-  localStorage.setItem("darkMode", "enabled");
-};
+let darkMode = localStorage.getItem("darkMode");
 
-const disableDarkMode = () => {
-  document.body.classList.remove("dark-mode");
-  localStorage.setItem("darkMode", "disabled");
-};
-
-if (darkMode === "enabled") {
-  enableDarkMode();
+if (darkMode === null) {
+  darkMode = "disabled";
+  localStorage.setItem("darkMode", darkMode);
 }
 
 darkModeToggle.addEventListener("click", () => {
   darkMode = localStorage.getItem("darkMode");
   if (darkMode !== "enabled") {
     enableDarkMode();
-    console.log(darkMode);
   } else {
     disableDarkMode();
-    console.log(darkMode);
   }
 });
 
-// check if dark-mode is enabled, turn off.
-// If disabled, turn on.
+const enableDarkMode = () => {
+  document.documentElement.classList.remove("light");
+  document.documentElement.classList.add("dark");
+  localStorage.setItem("darkMode", "enabled");
+};
 
-// document.getElementsByName("theme").forEach((themeOption) => {
-//   themeOption.addEventListener("change", (event) => {
-//     const rootEl = document.documentElement;
-//     rootEl.setAttribute("color-theme", event.target.value);
-//   });
-// });
+const disableDarkMode = () => {
+  document.documentElement.classList.remove("dark");
+  document.documentElement.classList.add("light");
+  localStorage.setItem("darkMode", "disabled");
+};
+
+if (darkMode === "enabled") {
+  enableDarkMode();
+}
