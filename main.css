@@ -57,8 +57,19 @@ header {
     justify-content: space-between;
     align-items: center;
 
+    & button {
+      border: none;
+      background-color: inherit;
+      width: 40px;
+    }
+
     .theme-switcher {
-      width: 25px;
+      display: flex;
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
     }
   }
 }
