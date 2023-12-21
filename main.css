@@ -63,10 +63,6 @@ header {
       width: 40px;
     }
 
-    .theme-switcher {
-      display: flex;
-    }
-
     & svg {
       width: 100%;
       height: 100%;
