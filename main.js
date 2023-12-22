@@ -7,37 +7,35 @@ if (darkMode === null) {
   localStorage.setItem("darkMode", darkMode);
 }
 
-const enableDarkMode = () => {
-  themeToggleLight.style.display = "none"; // Hide sun icon
-  themeToggleDark.style.display = "flex"; // Show moon icon
-  document.documentElement.classList.remove("light");
-  document.documentElement.classList.add("dark");
-  localStorage.setItem("darkMode", "enabled");
-};
-
-const disableDarkMode = () => {
-  themeToggleLight.style.display = "flex"; // Show sun icon
-  themeToggleDark.style.display = "none"; // Hide moon icon
-  document.documentElement.classList.remove("dark");
-  document.documentElement.classList.add("light");
-  localStorage.setItem("darkMode", "disabled");
-};
-
 if (darkMode === "enabled") {
   enableDarkMode();
 } else {
-  themeToggleLight.style.display = "flex";
-  themeToggleDark.style.display = "none";
+  themeToggleLight.style.display = "none";
+  themeToggleDark.style.display = "flex";
+}
+
+function enableDarkMode() {
+  themeToggleLight.style.display = "flex"; // Hide sun icon
+  themeToggleDark.style.display = "none"; // Show moon icon
+  document.documentElement.classList.remove("light");
+  document.documentElement.classList.add("dark");
+  localStorage.setItem("darkMode", "enabled");
+}
+
+function disableDarkMode() {
+  themeToggleLight.style.display = "none"; // Show sun icon
+  themeToggleDark.style.display = "flex"; // Hide moon icon
+  document.documentElement.classList.remove("dark");
+  document.documentElement.classList.add("light");
+  localStorage.setItem("darkMode", "disabled");
 }
 
 themeToggleLight.addEventListener("click", () => {
-  darkMode = localStorage.getItem("darkMode");
-  enableDarkMode();
+  disableDarkMode();
 });
 
 themeToggleDark.addEventListener("click", () => {
-  darkMode = localStorage.getItem("darkMode");
-  disableDarkMode();
+  enableDarkMode();
 });
 
 console.log(darkMode);
