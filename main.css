@@ -1,7 +1,7 @@
 body {
   font-family: var(--primary-font-family);
-  color: var(--text-color);
   background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .page-container {
@@ -37,6 +37,11 @@ section {
 
 svg {
   color: var(--svg-color);
+}
+
+a span {
+  color: var(--span-color);
+  font-weight: 600;
 }
 
 header {
@@ -165,12 +170,6 @@ figure {
     font-weight: 400;
     text-align: center;
   }
-}
-
-/* Contact Page */
-a span {
-  color: #770bc3;
-  font-weight: 600;
 }
 
 /* Media Queries */
