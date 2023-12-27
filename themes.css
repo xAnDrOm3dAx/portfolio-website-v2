@@ -1,6 +1,9 @@
 :root {
   --primary-font-family: "Roboto", sans-serif;
   --secondary-font-family: "Raleway", sans-serif;
+  --gutter-x-small: 0.6rem;
+  --gutter-small: 1.25rem;
+  --gutter-medium: 1.87rem;
 }
 :root,
 :root.light {
