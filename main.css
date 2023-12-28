@@ -116,7 +116,7 @@ main {
     transition: all 250ms ease;
 
     &:hover {
-      box-shadow: 0 0 16px 3px var(--box-shadow-color);
+      box-shadow: 0 0 10px 3px var(--box-shadow-color);
     }
   }
 
