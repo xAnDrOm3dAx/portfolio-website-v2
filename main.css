@@ -95,11 +95,6 @@ main {
 }
 
 .home-page-hero {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gutter-small);
-  padding: var(--gutter-small) 0;
-
   a {
     font-weight: 600;
   }
