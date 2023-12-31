@@ -65,7 +65,7 @@ header {
     font-size: 1.1rem;
   }
 
-  .nav-container {
+  .nav-wrapper {
     display: flex;
     gap: 16px;
     justify-content: space-between;
@@ -94,13 +94,13 @@ main {
   grid-row: 2 / 3;
 }
 
-.home-page-hero {
+.hero-wrapper {
   a {
     font-weight: 600;
   }
 }
 
-.projects-showcase {
+.projects-wrapper {
   .selected-projects {
     border-radius: 22px;
     padding: var(--gutter-medium);
