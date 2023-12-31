@@ -1,9 +1,9 @@
-.global-spacing {
+/* .global-spacing {
   display: flex;
   flex-direction: column;
   gap: var(--gutter-small);
   padding: var(--gutter-small) 0;
-}
+} */
 
 body {
   font-family: var(--primary-font-family);
