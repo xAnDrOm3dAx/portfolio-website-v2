@@ -34,6 +34,15 @@ p {
   font-size: 1rem;
 }
 
+svg {
+  color: var(--svg-color);
+}
+
+a span {
+  color: var(--span-color);
+  font-weight: 600;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -42,13 +51,11 @@ section {
   border-bottom: 2px solid #dbdbdb;
 }
 
-svg {
-  color: var(--svg-color);
-}
-
-a span {
-  color: var(--span-color);
-  font-weight: 600;
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 header {
@@ -62,7 +69,7 @@ header {
   border-bottom: 2px solid #dbdbdb;
 
   & a {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .nav-wrapper {
@@ -71,13 +78,9 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    & button {
+    .theme-toggle-btn {
       border: none;
       background-color: inherit;
-      width: 40px;
-    }
-
-    .theme-toggle-btn {
       width: 30px;
       height: auto;
 
@@ -103,10 +106,8 @@ main {
 .projects-wrapper {
   .selected-projects {
     border-radius: 22px;
-    padding: var(--gutter-medium);
+    padding: var(--gutter-small);
     background-color: var(--project-card-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     border: var(--project-card-border-color);
     transition: all 250ms ease;
 
@@ -163,35 +164,24 @@ footer {
 }
 
 /* Profile Page */
-figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.profile-photo {
+  width: 100%;
+  border: 1px solid var(--project-card-border-color);
+  border-radius: 34px;
+  margin: var(--gutter-x-small) 0 var(--gutter-x-small);
+}
 
-  .profile-photo {
-    width: 100%;
-    border: 1px solid var(--project-card-border-color);
-    border-radius: 34px;
-    margin: var(--gutter-x-small) 0 var(--gutter-x-small);
-  }
-
-  .photo-caption {
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-  }
+.photo-caption {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* Media Queries */
 @media (min-width: 480px) {
-  .selected-projects {
-    padding: var(--gutter-small) !important;
-  }
-
   .link-container {
     display: flex;
-    gap: 1.25rem;
+    gap: var(--gutter-small);
 
     & figure {
       flex: 1;
