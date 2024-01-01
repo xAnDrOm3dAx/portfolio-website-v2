@@ -5,6 +5,7 @@
   --gutter-small: 1.25rem;
   --gutter-medium: 1.87rem;
 }
+
 :root,
 :root.light {
   --text-color: #1d2125;
