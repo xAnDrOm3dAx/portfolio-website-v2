@@ -8,20 +8,19 @@
 
 :root,
 :root.light {
-  --text-color: #1d2125;
-  --background-color: #f7f8f9;
-  --svg-color: #1d2125;
-  --project-card-color: #b3b9c4;
-  --project-card-border-color: #b3b9c4;
-  --box-shadow-color: #454f59;
-  --span-color: #770bc3;
+  --text-color: #111111;
+  --background-color: #f8f5fb;
+  --svg-color: #2f5392;
+  --project-card-color: #d2d3db;
+  --box-shadow-color: #88888f;
+  --span-color: #2f5392;
 }
 
 :root.dark {
-  --text-color: #f7f8f9;
-  --background-color: #1d2125;
-  --svg-color: #f7f8f9;
-  --project-card-color: #454f59;
-  --box-shadow-color: #b3b9c4;
-  --span-color: #1d7afc;
+  --text-color: #f8f5fb;
+  --background-color: #111111;
+  --svg-color: #6fadf3;
+  --project-card-color: #2f2f2f;
+  --box-shadow-color: #7c7c7c;
+  --span-color: #6fadf3;
 }
