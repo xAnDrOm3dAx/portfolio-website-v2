@@ -21,10 +21,11 @@
 :root.dark {
   --text-color: #f8f5fb;
   --background-color: #111111;
-  --svg-color: #e77a14;
+  --svg-color: #e78122;
   --project-card-color: #2f2f2f;
   --box-shadow-color: #7c7c7c;
   --span-color: #6ca8ec;
   --span-color-hover: #f8f5fb;
-  --theme-btn-color: #e58327;
+  /* --theme-btn-color: #e58327; */
+  --theme-btn-color: #f6f329;
 }
