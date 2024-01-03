@@ -13,13 +13,14 @@
   --svg-color: #2f5392;
   --project-card-color: #d2d3db;
   --box-shadow-color: #88888f;
-  --span-color: #2f5392;
+  /* --span-color: #2f5392; */
+  --span-color: #d96d01;
   --span-color-hover: #111111;
   --theme-btn-color: #111111;
 }
 
 :root.dark {
-  --text-color: #f8f5fb;
+  --text-color: #e0e0e0;
   --background-color: #111111;
   --svg-color: #e78122;
   --project-card-color: #2f2f2f;
