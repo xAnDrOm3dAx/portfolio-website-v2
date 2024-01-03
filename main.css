@@ -27,13 +27,18 @@ p {
   font-size: 1rem;
 }
 
-svg {
-  color: var(--svg-color);
+p a {
+  font-weight: 500;
+  color: var(--span-color);
+  transition: all 250ms ease;
+
+  &:hover {
+    color: var(--span-color-hover);
+  }
 }
 
-a span {
-  color: var(--span-color);
-  font-weight: 600;
+svg {
+  color: var(--svg-color);
 }
 
 section {
@@ -63,6 +68,12 @@ header {
 
   & a {
     font-size: 1rem;
+    color: var(--span-color);
+    transition: all 250ms ease;
+
+    &:hover {
+      color: var(--span-color-hover);
+    }
   }
 
   .nav-wrapper {
@@ -70,17 +81,19 @@ header {
     gap: 16px;
     justify-content: space-between;
     align-items: center;
+  }
 
-    .theme-toggle-btn {
-      border: none;
-      background-color: inherit;
-      width: 30px;
-      height: auto;
+  .theme-toggle-btn {
+    border: none;
+    background-color: inherit;
+    width: 30px;
+    height: auto;
 
-      & svg {
-        width: 100%;
-        height: 100%;
-      }
+    & svg {
+      width: 100%;
+      height: 100%;
+      transition: all 250ms ease;
+      color: var(--theme-btn-color);
     }
   }
 }
@@ -90,16 +103,11 @@ main {
   grid-row: 2 / 3;
 }
 
-.hero-container {
-  a {
-    font-weight: 600;
-  }
-}
-
 .projects-container {
   .project-wrapper {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: var(--gutter-x-small);
     border-radius: 22px;
     padding: var(--gutter-medium);
@@ -142,9 +150,14 @@ footer {
     gap: 20px;
 
     svg {
-      color: var(--svg-color);
+      color: var(--span-color);
       width: 30px;
       height: auto;
+      transition: all 250ms ease;
+
+      &:hover {
+        color: var(--span-color-hover);
+      }
     }
   }
 }
@@ -158,7 +171,7 @@ footer {
 
 .photo-caption {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -166,6 +179,7 @@ footer {
 @media (min-width: 480px) {
   .project-wrapper {
     flex-direction: row !important;
+    text-align: left;
 
     & figure {
       flex: 1;
@@ -183,9 +197,5 @@ footer {
       justify-content: center;
       text-align: start;
     }
-  }
-
-  .profile-photo {
-    max-width: 80%;
   }
 }

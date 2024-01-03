@@ -14,13 +14,17 @@
   --project-card-color: #d2d3db;
   --box-shadow-color: #88888f;
   --span-color: #2f5392;
+  --span-color-hover: #111111;
+  --theme-btn-color: #111111;
 }
 
 :root.dark {
   --text-color: #f8f5fb;
   --background-color: #111111;
-  --svg-color: #6fadf3;
+  --svg-color: #e77a14;
   --project-card-color: #2f2f2f;
   --box-shadow-color: #7c7c7c;
-  --span-color: #6fadf3;
+  --span-color: #6ca8ec;
+  --span-color-hover: #f8f5fb;
+  --theme-btn-color: #e58327;
 }
