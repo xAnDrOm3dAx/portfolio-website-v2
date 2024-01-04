@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap");
+
 body {
   font-family: var(--primary-font-family);
   background-color: var(--background-color);
@@ -24,7 +26,6 @@ h3 {
 
 p {
   font-family: var(--secondary-font-family);
-  font-size: 1rem;
 }
 
 p a {
@@ -59,12 +60,18 @@ figure {
 header {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  margin: var(--gutter-medium) 0 0;
+  margin: var(--gutter-small) 0 0;
   padding: 0 0 var(--gutter-small);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: var(--gutter-x-small);
   border-bottom: 2px solid var(--project-card-color);
+
+  .logo {
+    font-family: var(--logo-font);
+    font-size: 1.8rem;
+  }
 
   & a {
     font-size: 1rem;
@@ -79,8 +86,8 @@ header {
 
   .nav-wrapper {
     display: flex;
-    gap: 16px;
-    justify-content: space-between;
+    gap: var(--gutter-small);
+    justify-content: center;
     align-items: center;
   }
 
@@ -178,6 +185,12 @@ footer {
 
 /* Media Queries */
 @media (min-width: 480px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .project-wrapper {
     flex-direction: row !important;
     text-align: left;
