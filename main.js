@@ -49,10 +49,8 @@ let darkMode = localStorage.getItem("darkMode");
 if (darkMode === null) {
   // Check for the user's system color scheme
   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
   // Set darkMode based on the user's system settings
   darkMode = prefersDarkMode ? "enabled" : "disabled";
-
   localStorage.setItem("darkMode", darkMode);
 }
 
