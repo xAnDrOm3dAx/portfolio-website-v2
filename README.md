@@ -19,8 +19,8 @@ Utilizing the skills that I have built on over the past year, I have created a p
 
 ### Links
 
-- Solution URL: [https://github.com/xAnDrOm3dAx/portfolio-website-v2]
-- Live Site URL: [https://xandrom3dax.github.io/portfolio-website-v2]
+- Solution URL: https://github.com/xAnDrOm3dAx/portfolio-website-v2
+- Live Site URL: https://xandrom3dax.github.io/portfolio-website-v2
 
 ## My process
 
