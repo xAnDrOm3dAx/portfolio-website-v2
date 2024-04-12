@@ -62,12 +62,12 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    rootMargin: "0px",
+    rootMargin: "-20px",
     threshold: [0, 0.2, 1],
   }
 );
 
-const tags = document.querySelectorAll(".project-wrapper, section");
+const tags = document.querySelectorAll(".project-wrapper, h2, h3, figure, p");
 
 tags.forEach((tag) => {
   observer.observe(tag);
