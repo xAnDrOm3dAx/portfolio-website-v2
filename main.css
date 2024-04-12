@@ -224,3 +224,25 @@ p > span {
     }
   }
 }
+
+/* Animations */
+
+.animate {
+  animation: fadeInAndScale 500ms 200ms both;
+}
+
+.undo-animate {
+  opacity: 0;
+}
+
+@keyframes fadeInAndScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
