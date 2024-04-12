@@ -112,6 +112,12 @@ main {
   grid-row: 2 / 3;
 }
 
+.language-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: var(--gutter-small);
+}
+
 .projects-container {
   .project-wrapper {
     display: flex;
