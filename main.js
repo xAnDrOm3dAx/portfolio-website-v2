@@ -67,7 +67,7 @@ const observer = new IntersectionObserver(
   }
 );
 
-const tags = document.querySelectorAll(".project-wrapper, h2, h3, figure, p");
+const tags = document.querySelectorAll(".project-wrapper, h3, figure, p");
 
 tags.forEach((tag) => {
   observer.observe(tag);
