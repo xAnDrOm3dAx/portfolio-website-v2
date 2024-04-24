@@ -190,11 +190,11 @@ footer {
   text-align: center;
 }
 
-p > span {
-  font-weight: 600;
-}
-
 .dev-experience-wrapper {
+  p > span {
+    font-weight: 600;
+  }
+
   a > span {
     font-weight: 400;
   }
