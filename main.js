@@ -55,9 +55,9 @@ const observer = new IntersectionObserver(
       if (element.isIntersecting) {
         element.target.classList.add("animate");
         element.target.classList.remove("undo-animate");
-      } else {
-        element.target.classList.remove("animate");
-        element.target.classList.add("undo-animate");
+        // } else {
+        //   element.target.classList.remove("animate");
+        //   element.target.classList.add("undo-animate");
       }
     });
   },
