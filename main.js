@@ -54,7 +54,7 @@ const observer = new IntersectionObserver(
     animations.forEach((element) => {
       if (element.isIntersecting) {
         element.target.classList.add("animate");
-        // element.target.classList.remove("undo-animate");
+        element.target.classList.remove("undo-animate");
       } else {
         // element.target.classList.remove("animate");
         // element.target.classList.add("undo-animate");
