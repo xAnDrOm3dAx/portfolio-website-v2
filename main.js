@@ -56,14 +56,14 @@ const observer = new IntersectionObserver(
         element.target.classList.add("animate");
         element.target.classList.remove("undo-animate");
         element.target.classList.remove("hide");
-      } else {
-        element.target.classList.remove("animate");
-        element.target.classList.add("undo-animate");
+        // } else {
+        //   element.target.classList.remove("animate");
+        //   element.target.classList.add("undo-animate");
       }
     });
   },
   {
-    rootMargin: "-60px",
+    rootMargin: "-20px",
     threshold: [0, 0.2, 1],
   }
 );
