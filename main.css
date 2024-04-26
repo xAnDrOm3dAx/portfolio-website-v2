@@ -190,7 +190,7 @@ footer {
   text-align: center;
 }
 
-.dev-experience-wrapper {
+.dev-experience-container {
   p > span {
     font-weight: 600;
   }
@@ -232,6 +232,10 @@ footer {
 }
 
 /* Animations */
+
+.hide {
+  visibility: hidden;
+}
 
 .animate {
   animation: fadeInAndScale 500ms 200ms both;

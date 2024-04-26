@@ -55,9 +55,10 @@ const observer = new IntersectionObserver(
       if (element.isIntersecting) {
         element.target.classList.add("animate");
         element.target.classList.remove("undo-animate");
-      } else {
-        element.target.classList.remove("animate");
-        element.target.classList.add("undo-animate");
+        element.target.classList.remove("hide");
+        // } else {
+        //   element.target.classList.remove("animate");
+        //   element.target.classList.add("undo-animate");
       }
     });
   },
@@ -67,8 +68,9 @@ const observer = new IntersectionObserver(
   }
 );
 
-const tags = document.querySelectorAll(".project-wrapper, .language-icons, h3, figure, p");
-
+const tags = document.querySelectorAll(
+  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .contact-container"
+);
 tags.forEach((tag) => {
   observer.observe(tag);
 });
