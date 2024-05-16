@@ -118,36 +118,34 @@ main {
   gap: var(--gutter-small);
 }
 
-.projects-container {
-  .project-wrapper {
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: var(--gutter-x-small);
+  border-radius: 22px;
+  padding: var(--gutter-medium);
+  background-color: var(--project-card-color);
+  transition: all 250ms ease;
+
+  & svg {
+    width: 60%;
+    height: auto;
+  }
+
+  & div {
     display: flex;
     flex-direction: column;
-    text-align: center;
     gap: var(--gutter-x-small);
-    border-radius: 22px;
-    padding: var(--gutter-medium);
-    background-color: var(--project-card-color);
-    transition: all 250ms ease;
-
-    & svg {
-      width: 60%;
-      height: 60%;
-    }
-
-    & div {
-      display: flex;
-      flex-direction: column;
-      gap: var(--gutter-x-small);
-    }
-
-    &:hover {
-      box-shadow: 0 0 10px 3px var(--box-shadow-color);
-    }
   }
 
-  .view-all {
-    font-weight: 600;
+  &:hover {
+    box-shadow: 0 0 10px 3px var(--box-shadow-color);
   }
+}
+
+.view-all {
+  font-weight: 600;
 }
 
 footer {
@@ -209,7 +207,7 @@ footer {
   }
 
   .project-wrapper {
-    flex-direction: row !important;
+    flex-direction: row;
     text-align: left;
 
     & figure {
@@ -217,8 +215,7 @@ footer {
     }
 
     & svg {
-      width: 100% !important;
-      height: 100% !important;
+      width: 100%;
     }
 
     & div {
