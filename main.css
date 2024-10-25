@@ -4,6 +4,7 @@ body {
   font-family: var(--primary-font-family);
   background-color: var(--background-color);
   color: var(--text-color);
+  overflow-y: hidden;
 }
 
 .page-container {
@@ -189,11 +190,11 @@ footer {
 }
 
 .dev-experience-container {
-  p > span {
+  p>span {
     font-weight: 600;
   }
 
-  a > span {
+  a>span {
     font-weight: 400;
   }
 }
