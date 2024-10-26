@@ -8,8 +8,8 @@ body {
 
 .page-container {
   display: grid;
-  grid-template-columns: auto clamp(200px, 100%, 928px) auto;
-  /* margin: 0 var(--gutter-medium); */
+  grid-template-columns: auto clamp(200px, 100%, 928px);
+  justify-content: center;
 }
 
 h1 {
@@ -43,19 +43,9 @@ svg {
 }
 
 section {
-  /* display: flex;
-  flex-direction: column; */
-  gap: var(--gutter-small);
   padding: var(--gutter-small) 0;
   border-bottom: 2px solid var(--project-card-color);
 }
-
-@media (min-width: 480px) {
-  .layout {
-    columns: 2 auto;
-  }
-}
-
 
 figure {
   display: flex;
@@ -129,16 +119,18 @@ main {
   margin-top: 0;
 }
 
+.layout {
+  columns: 3 260px;
+}
+
 .project-wrapper {
-  /* display: flex;
-  flex-direction: column; */
   text-align: center;
-  /* gap: var(--gutter-x-small); */
   border-radius: 22px;
   padding: var(--gutter-medium);
   background-color: var(--project-card-color);
   transition: all 250ms ease;
   margin: var(--gutter-small) 0;
+  break-inside: avoid;
 
   & svg {
     width: 60%;
@@ -216,27 +208,6 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  .project-wrapper {
-    flex-direction: row;
-    text-align: left;
-
-    & figure {
-      flex: 1;
-    }
-
-    & svg {
-      width: 100%;
-    }
-
-    & div {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: start;
-    }
   }
 }
 
