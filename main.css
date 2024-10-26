@@ -4,13 +4,12 @@ body {
   font-family: var(--primary-font-family);
   background-color: var(--background-color);
   color: var(--text-color);
-  overflow-y: hidden;
 }
 
 .page-container {
   display: grid;
-  grid-template-columns: auto clamp(200px, 100%, 640px) auto;
-  margin: 0 var(--gutter-medium);
+  grid-template-columns: auto clamp(200px, 100%, 928px) auto;
+  /* margin: 0 var(--gutter-medium); */
 }
 
 h1 {
@@ -44,12 +43,19 @@ svg {
 }
 
 section {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   gap: var(--gutter-small);
   padding: var(--gutter-small) 0;
   border-bottom: 2px solid var(--project-card-color);
 }
+
+@media (min-width: 480px) {
+  .layout {
+    columns: 2 auto;
+  }
+}
+
 
 figure {
   display: flex;
@@ -119,15 +125,20 @@ main {
   gap: var(--gutter-small);
 }
 
+.projects-container :nth-child(1) {
+  margin-top: 0;
+}
+
 .project-wrapper {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   text-align: center;
-  gap: var(--gutter-x-small);
+  /* gap: var(--gutter-x-small); */
   border-radius: 22px;
   padding: var(--gutter-medium);
   background-color: var(--project-card-color);
   transition: all 250ms ease;
+  margin: var(--gutter-small) 0;
 
   & svg {
     width: 60%;
