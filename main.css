@@ -10,6 +10,7 @@ body {
   display: grid;
   grid-template-columns: auto clamp(200px, 100%, 928px);
   justify-content: center;
+  margin: 0 var(--gutter-small);
 }
 
 h1 {
@@ -115,8 +116,10 @@ main {
   gap: var(--gutter-small);
 }
 
-.projects-container :nth-child(1) {
-  margin-top: 0;
+.projects-container {
+  :nth-child(1) {
+    margin-top: 0;
+  }
 }
 
 .layout {
