@@ -10,7 +10,7 @@ body {
   display: grid;
   grid-template-columns: auto clamp(200px, 100%, 928px);
   justify-content: center;
-  /* margin: 0 var(--gutter-small); */
+  margin: 0 var(--gutter-small);
 }
 
 h1 {
@@ -46,6 +46,9 @@ svg {
 section {
   padding: var(--gutter-small) 0;
   border-bottom: 2px solid var(--project-card-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter-small);
 }
 
 figure {
@@ -133,8 +136,8 @@ main {
   padding: var(--gutter-medium);
   background-color: var(--project-card-color);
   transition: all 250ms ease;
-  margin: var(--gutter-x-small);
-  break-inside: avoid;
+  /* margin: var(--gutter-x-small); */
+  /* break-inside: avoid; */
 
   & svg {
     width: 60%;
