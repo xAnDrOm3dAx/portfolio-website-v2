@@ -10,7 +10,7 @@ body {
   display: grid;
   grid-template-columns: auto clamp(200px, 100%, 928px);
   justify-content: center;
-  margin: 0 var(--gutter-small);
+  /* margin: 0 var(--gutter-small); */
 }
 
 h1 {
@@ -116,14 +116,15 @@ main {
   gap: var(--gutter-small);
 }
 
-.projects-container {
+/* .projects-container {
   :nth-child(1) {
     margin-top: 0;
   }
-}
+} */
 
 .layout {
-  columns: 3 260px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  display: grid;
 }
 
 .project-wrapper {
@@ -132,7 +133,7 @@ main {
   padding: var(--gutter-medium);
   background-color: var(--project-card-color);
   transition: all 250ms ease;
-  margin: var(--gutter-small) 0;
+  margin: var(--gutter-x-small);
   break-inside: avoid;
 
   & svg {
