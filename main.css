@@ -10,7 +10,7 @@ body {
   /* display: grid; */
   /* grid-template-columns: auto clamp(200px, 100%, 928px); */
   /* justify-content: center; */
-  padding: 0 var(--gutter-small);
+  margin: 0 var(--gutter-small);
 }
 
 h1 {
