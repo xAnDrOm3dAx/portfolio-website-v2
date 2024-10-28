@@ -113,6 +113,10 @@ main {
   grid-row: 2 / 3; */
   max-width: 1028px;
   margin: 0 auto;
+
+  >*:last-child {
+    border-bottom: none
+  }
 }
 
 .language-icons {
@@ -170,6 +174,7 @@ footer {
   gap: var(--gutter-small);
   margin: 0 0 var(--gutter-medium);
   padding: var(--gutter-small) 0 0;
+  border-top: 2px solid var(--project-card-color);
 
   .icon-links-wrapper {
     display: flex;
