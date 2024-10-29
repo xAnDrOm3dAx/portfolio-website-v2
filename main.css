@@ -6,6 +6,11 @@ body {
   color: var(--text-color);
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 .page-container {
   /* display: grid; */
   /* grid-template-columns: auto clamp(200px, 100%, 928px); */
