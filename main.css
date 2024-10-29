@@ -247,31 +247,31 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-} */
+  } */
+}
 
-  /* Animations */
+/* Animations */
 
-  .hide {
-    visibility: hidden;
-  }
+.hide {
+  visibility: hidden;
+}
 
-  .animate {
-    animation: fadeInAndScale 500ms 200ms both;
-  }
+.animate {
+  animation: fadeInAndScale 500ms 200ms both;
+}
 
-  .undo-animate {
+.undo-animate {
+  opacity: 0;
+}
+
+@keyframes fadeInAndScale {
+  0% {
     opacity: 0;
+    transform: scale(0.8);
   }
 
-  @keyframes fadeInAndScale {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
+}
