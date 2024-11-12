@@ -12,9 +12,6 @@ html {
 }
 
 .page-container {
-  /* display: grid; */
-  /* grid-template-columns: auto clamp(200px, 100%, 928px); */
-  /* justify-content: center; */
   margin: 0 var(--gutter-small);
 }
 
@@ -30,21 +27,8 @@ h3 {
   font-size: 1.2rem;
 }
 
-/* p {
-  font-family: var(--secondary-font-family);
-
-  @media (min-width: 768px) {
-    font-size: 16px
-  }
-} */
-
 p {
   font-family: var(--secondary-font-family);
-  /* font-size: 14px;
-
-  @media (min-width: 1024px) {
-    font-size: 16px;
-  } */
 }
 
 p a {
@@ -77,8 +61,6 @@ figure {
 }
 
 header {
-  /* grid-column: 2 / 3;
-  grid-row: 1 / 2; */
   margin: var(--gutter-small) 0 0;
   padding: 0 0 var(--gutter-small);
   display: flex;
@@ -87,16 +69,12 @@ header {
   gap: var(--gutter-x-small);
   border-bottom: 2px solid var(--project-card-color);
 
-
-
-
   .logo {
     font-family: var(--logo-font);
     font-size: 1.8rem;
   }
 
   & a {
-    font-size: 1rem;
     color: var(--span-color);
     transition: all 250ms ease;
     font-weight: 500;
@@ -129,8 +107,6 @@ header {
 }
 
 main {
-  /* grid-column: 2 / 3;
-  grid-row: 2 / 3; */
   max-width: 1028px;
   margin: 0 auto;
 
@@ -139,17 +115,37 @@ main {
   }
 }
 
+.profile-photo {
+  width: 100%;
+  border-radius: 34px;
+  margin: var(--gutter-x-small) 0 var(--gutter-x-small);
+
+  @media (min-width: 480px) {
+    width: 60%;
+  }
+
+  .photo-caption {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .dev-experience-container {
+    p>span {
+      font-weight: 600;
+    }
+
+    a>span {
+      font-weight: 400;
+    }
+  }
+}
+
 .language-icons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
   gap: var(--gutter-small);
 }
-
-/* .projects-container {
-  :nth-child(1) {
-    margin-top: 0;
-  }
-} */
 
 .layout {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -163,8 +159,6 @@ main {
   padding: var(--gutter-medium);
   background-color: var(--project-card-color);
   transition: all 250ms ease;
-  /* margin: var(--gutter-x-small); */
-  /* break-inside: avoid; */
 
   & svg {
     width: 60%;
@@ -212,41 +206,6 @@ footer {
       }
     }
   }
-}
-
-/* Profile Page */
-.profile-photo {
-  width: 100%;
-  border-radius: 34px;
-  margin: var(--gutter-x-small) 0 var(--gutter-x-small);
-
-  @media (min-width: 480px) {
-    width: 60%;
-  }
-
-  .photo-caption {
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: center;
-  }
-
-  .dev-experience-container {
-    p>span {
-      font-weight: 600;
-    }
-
-    a>span {
-      font-weight: 400;
-    }
-  }
-
-  /* Media Queries */
-  /* @media (min-width: 480px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  } */
 }
 
 /* Animations */
