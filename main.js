@@ -1,7 +1,10 @@
 const themeToggleLight = document.querySelector("#theme-toggle-light");
 const themeToggleDark = document.querySelector("#theme-toggle-dark");
+const themeSwitcher = document.querySelector(".theme-switcher");
 
 let darkMode = localStorage.getItem("darkMode");
+
+themeSwitcher.style.visibility = "visible";
 
 // Check if dark mode is not explicitly set in local storage
 if (darkMode === null) {

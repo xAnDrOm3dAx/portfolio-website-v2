@@ -91,6 +91,11 @@ header {
     align-items: center;
   }
 
+  .theme-switcher {
+    visibility: hidden;
+    animation: fadeInAndScale 1s ease;
+  }
+
   .theme-toggle-btn {
     border: none;
     background-color: inherit;
@@ -212,6 +217,10 @@ footer {
 
 .hide {
   visibility: hidden;
+}
+
+.hide-toggle {
+  display: none;
 }
 
 .animate {
