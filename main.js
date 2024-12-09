@@ -77,3 +77,10 @@ const tags = document.querySelectorAll(
 tags.forEach((tag) => {
   observer.observe(tag);
 });
+
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const hamburgerMenuActive = document.querySelector(".hamburger-menu-active");
+
+hamburgerMenu.addEventListener("click", () => {
+  hamburgerMenuActive.classList.toggle("hide-toggle");
+});
