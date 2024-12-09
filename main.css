@@ -172,7 +172,7 @@ main {
 .hamburger-menu-active {
   position: absolute;
   top: 0;
-  right: -300px;
+  right: -350px;
   height: 100vh;
   width: max-content;
   padding: 1em 4em 1em 1em;
@@ -196,6 +196,7 @@ main {
     color: var(--span-color);
     transition: all 250ms ease;
     font-weight: 500;
+    font-size: 1.2rem;
 
     &:hover {
       color: var(--span-color-hover);
