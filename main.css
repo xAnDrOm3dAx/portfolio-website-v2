@@ -50,6 +50,7 @@ svg {
 }
 
 section {
+  position: relative;
   padding: var(--gutter-small) 0;
   border-bottom: 2px solid var(--project-card-color);
   display: flex;
@@ -118,24 +119,6 @@ header {
     }
   }
 
-  /* .hamburger-menu-active {
-    position: fixed;
-    top: 0;
-    right: -400px;
-    height: 100vh;
-    width: max-content;
-    z-index: 1;
-    padding: 1em 4em 1em 1em;
-    border-left: solid 2px var(--project-card-color);
-    border-radius: 0 0 10px 10px;
-    background-color: var(--background-color);
-    transition: 500ms ease;
-
-    & li {
-      margin: var(--gutter-small) 0;
-    }
-  } */
-
   .theme-switcher {
     visibility: hidden;
     animation: fadeInAndScale 1s ease;
@@ -167,41 +150,6 @@ main {
 
 .hide-toggle {
   right: 0px !important;
-}
-
-.hamburger-menu-active {
-  position: absolute;
-  top: 0;
-  right: -350px;
-  height: 100vh;
-  width: max-content;
-  padding: 1em 4em 1em 1em;
-  border-left: 2px solid var(--project-card-color);
-  background-color: var(--background-color);
-  transition: 500ms ease;
-
-  /* & li {
-    text-decoration: underline;
-  } */
-
-  & li:nth-child(1) {
-    margin-bottom: var(--gutter-small);
-  }
-
-  & li:nth-child(3) {
-    margin-top: var(--gutter-small);
-  }
-
-  & a {
-    color: var(--span-color);
-    transition: all 250ms ease;
-    font-weight: 500;
-    font-size: 1.2rem;
-
-    &:hover {
-      color: var(--span-color-hover);
-    }
-  }
 }
 
 .profile-photo {
@@ -298,6 +246,42 @@ footer {
 }
 
 /* Animations */
+
+.hamburger-menu-active {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: max-content;
+  padding: var(--gutter-small);
+  border-left: 2px solid var(--project-card-color);
+  border-bottom: 2px solid var(--project-card-color);
+  border-radius: 0 0 0 10px;
+  background-color: var(--background-color);
+  transition: 500ms ease;
+
+  /* & li {
+    text-decoration: underline;
+  } */
+
+  & li:nth-child(1) {
+    margin-bottom: var(--gutter-small);
+  }
+
+  & li:nth-child(3) {
+    margin-top: var(--gutter-small);
+  }
+
+  & a {
+    color: var(--span-color);
+    transition: all 250ms ease;
+    font-weight: 500;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: var(--span-color-hover);
+    }
+  }
+}
 
 .hide {
   visibility: hidden;
