@@ -6,6 +6,10 @@ let darkMode = localStorage.getItem("darkMode");
 
 themeSwitcher.style.visibility = "visible";
 
+//
+//
+//
+//
 // Check if dark mode is not explicitly set in local storage
 if (darkMode === null) {
   // Check for the user's system color scheme
@@ -15,6 +19,10 @@ if (darkMode === null) {
   localStorage.setItem("darkMode", darkMode);
 }
 
+//
+//
+//
+//
 // Apply the theme based on the darkMode setting
 if (darkMode === "enabled") {
   enableDarkMode();
@@ -78,9 +86,14 @@ tags.forEach((tag) => {
   observer.observe(tag);
 });
 
+//
+//
+//
+//
+// Toggle hamburger menu
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const hamburgerMenuActive = document.querySelector(".hamburger-menu-active");
 
 hamburgerMenu.addEventListener("click", () => {
-  hamburgerMenuActive.classList.toggle("hide-toggle");
+  hamburgerMenuActive.classList.toggle("toggle-hamburger");
 });

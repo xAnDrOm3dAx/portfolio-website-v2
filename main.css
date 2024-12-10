@@ -4,6 +4,7 @@ body {
   font-family: var(--primary-font-family);
   background-color: var(--background-color);
   color: var(--text-color);
+  transition: 150ms ease-in-out;
 }
 
 html {
@@ -148,10 +149,6 @@ main {
   }
 }
 
-.hide-toggle {
-  right: 0px !important;
-}
-
 .profile-photo {
   width: 100%;
   border-radius: 34px;
@@ -248,20 +245,17 @@ footer {
 /* Animations */
 
 .hamburger-menu-active {
-  position: fixed;
-  top: 0;
-  right: -350px;
+  position: absolute;
+  right: 0;
+  opacity: 0;
   width: max-content;
   padding: var(--gutter-small);
   border-left: 2px solid var(--project-card-color);
   border-bottom: 2px solid var(--project-card-color);
   border-radius: 0 0 0 10px;
   background-color: var(--background-color);
-  transition: 500ms ease;
-
-  /* & li {
-    text-decoration: underline;
-  } */
+  transition: 150ms ease-in-out;
+  z-index: 1;
 
   & li:nth-child(1) {
     margin-bottom: var(--gutter-small);
@@ -281,6 +275,10 @@ footer {
       color: var(--span-color-hover);
     }
   }
+}
+
+.toggle-hamburger {
+  opacity: 1;
 }
 
 .hide {
