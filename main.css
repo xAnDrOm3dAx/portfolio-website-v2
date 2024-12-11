@@ -4,7 +4,7 @@ body {
   font-family: var(--primary-font-family);
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: 150ms ease-in-out;
+  /* transition: 150ms ease-in-out; */
 }
 
 html {
@@ -13,7 +13,7 @@ html {
 }
 
 .page-container {
-  position: relative;
+  /* position: relative; */
 }
 
 h1 {
@@ -47,7 +47,7 @@ svg {
 }
 
 section {
-  position: relative;
+  /* position: relative; */
   margin: 0 var(--gutter-small);
   padding: var(--gutter-small) 0;
   border-bottom: 2px solid var(--project-card-color);
@@ -94,7 +94,7 @@ header {
   }
 
   .hamburger-menu {
-    position: relative;
+    /* position: relative; */
     height: 100%;
     width: 30px;
     display: flex;
@@ -240,16 +240,16 @@ footer {
 /* Animations */
 
 .hamburger-menu-active {
-  position: absolute;
+  /* position: absolute; */
   right: 0;
-  opacity: 0;
+  /* opacity: 0; */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: var(--gutter-medium);
   background-color: var(--background-color);
-  transition: 150ms ease-in-out;
+  /* transition: 150ms ease-in-out; */
   z-index: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: flex-start;
   text-align: right;

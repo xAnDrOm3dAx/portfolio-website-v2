@@ -80,7 +80,7 @@ const observer = new IntersectionObserver(
 );
 
 const tags = document.querySelectorAll(
-  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .contact-container"
+  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .contact-container, .hamburger-menu-active"
 );
 tags.forEach((tag) => {
   observer.observe(tag);
@@ -94,6 +94,15 @@ tags.forEach((tag) => {
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const hamburgerMenuActive = document.querySelector(".hamburger-menu-active");
 
+// hamburgerMenu.addEventListener("click", () => {
+//   hamburgerMenuActive.classList.toggle("toggle-hamburger");
+// });
+
+const sections = document.querySelectorAll("section");
 hamburgerMenu.addEventListener("click", () => {
-  hamburgerMenuActive.classList.toggle("toggle-hamburger");
+  sections.forEach((section) => {
+    section.style.display = section.style.display === "none" ? "block" : "none";
+  });
+  // hamburgerMenuActive.classList.toggle("toggle-hamburger");
+  hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "block" ? "none" : "block";
 });
