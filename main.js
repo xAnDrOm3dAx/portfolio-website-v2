@@ -93,16 +93,12 @@ tags.forEach((tag) => {
 // Toggle hamburger menu
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const hamburgerMenuActive = document.querySelector(".hamburger-menu-active");
-
-// hamburgerMenu.addEventListener("click", () => {
-//   hamburgerMenuActive.classList.toggle("toggle-hamburger");
-// });
-
 const sections = document.querySelectorAll("section");
+
 hamburgerMenu.addEventListener("click", () => {
+  hamburgerMenu.classList.toggle("active");
   sections.forEach((section) => {
-    section.style.display = section.style.display === "none" ? "block" : "none";
+    section.style.display = section.style.display === "none" ? "flex" : "none";
   });
-  // hamburgerMenuActive.classList.toggle("toggle-hamburger");
-  hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "block" ? "none" : "block";
+  hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "flex" ? "none" : "flex";
 });
