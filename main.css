@@ -29,7 +29,7 @@ p {
 }
 
 p a {
-  font-weight: 600;
+  /* font-weight: 600; */
   color: var(--span-color);
 
   &:hover {
@@ -151,15 +151,11 @@ main {
     font-weight: 600;
     text-align: center;
   }
+}
 
-  .dev-experience-container {
-    p>span {
-      font-weight: 600;
-    }
-
-    a>span {
-      font-weight: 400;
-    }
+.dev-experience-container {
+  p>span {
+    font-weight: 600;
   }
 }
 
