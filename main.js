@@ -26,22 +26,23 @@ if (darkMode === null) {
 // Apply the theme based on the darkMode setting
 if (darkMode === "enabled") {
   enableDarkMode();
-} else {
-  themeToggleLight.style.display = "none";
-  themeToggleDark.style.display = "flex";
 }
+// else {
+//   themeToggleLight.style.display = "none";
+//   themeToggleDark.style.display = "flex";
+// }
 
 function enableDarkMode() {
-  themeToggleLight.style.display = "flex"; // Hide sun icon
-  themeToggleDark.style.display = "none"; // Show moon icon
+  // themeToggleLight.style.display = "flex";
+  // themeToggleDark.style.display = "none";
   document.documentElement.classList.remove("light");
   document.documentElement.classList.add("dark");
   localStorage.setItem("darkMode", "enabled");
 }
 
 function disableDarkMode() {
-  themeToggleLight.style.display = "none"; // Show sun icon
-  themeToggleDark.style.display = "flex"; // Hide moon icon
+  // themeToggleLight.style.display = "none";
+  // themeToggleDark.style.display = "flex";
   document.documentElement.classList.remove("dark");
   document.documentElement.classList.add("light");
   localStorage.setItem("darkMode", "disabled");

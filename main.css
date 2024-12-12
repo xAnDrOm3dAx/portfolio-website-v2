@@ -97,7 +97,7 @@ header {
       height: 3px;
       border-radius: 10px;
       background-color: var(--text-color);
-      transition: 250ms ease;
+      /* transition: 250ms ease; */
     }
 
     & span:nth-child(1) {
@@ -110,8 +110,8 @@ header {
   }
 
   .theme-switcher {
-    visibility: hidden;
-    animation: fadeInAndScale 1s ease;
+    display: flex;
+    gap: var(--gutter-small);
   }
 
   .theme-toggle-btn {
@@ -227,11 +227,11 @@ footer {
 /* Animations */
 
 .hamburger-menu-active {
-  position: relative;
-  right: 2rem;
-  top: 1rem;
+  margin: 0 var(--gutter-small) 0 0;
+  padding: var(--gutter-small) var(--gutter-small);
   height: 100vh;
   background-color: var(--background-color);
+  border-bottom: 2px solid var(--project-card-color);
   display: none;
   flex-direction: column;
   align-items: flex-end;
