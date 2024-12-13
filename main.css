@@ -81,7 +81,7 @@ header {
 
   .nav-wrapper {
     display: flex;
-    gap: var(--gutter-small);
+    gap: var(--gutter-x-small);
     justify-content: center;
     align-items: center;
   }
@@ -111,7 +111,7 @@ header {
 
   .theme-switcher {
     display: flex;
-    gap: var(--gutter-small);
+    gap: var(--gutter-x-small);
   }
 
   .theme-toggle-btn {
@@ -125,6 +125,56 @@ header {
       height: 100%;
       color: var(--theme-btn-color);
     }
+  }
+}
+
+.hamburger-menu-active {
+  margin: 0 var(--gutter-small) 0 0;
+  padding: var(--gutter-small) var(--gutter-small);
+  height: 100vh;
+  background-color: var(--background-color);
+  border-bottom: 2px solid var(--project-card-color);
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--gutter-medium);
+
+  h2 {
+    line-height: normal;
+    font-size: 1.8rem;
+    font-family: var(--logo-font);
+
+    @media only screen and (min-width: 768px) {
+      font-size: 2.8rem;
+    }
+  }
+
+  & ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-small);
+    line-height: normal;
+    font-family: var(--secondary-font-family);
+  }
+
+
+  & a {
+    color: var(--span-color);
+    font-weight: 500;
+    font-size: 1rem;
+
+    &:hover {
+      color: var(--span-color-hover);
+    }
+
+    @media only screen and (min-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    border: none;
   }
 }
 
@@ -225,57 +275,6 @@ footer {
 }
 
 /* Animations */
-
-.hamburger-menu-active {
-  margin: 0 var(--gutter-small) 0 0;
-  padding: var(--gutter-small) var(--gutter-small);
-  height: 100vh;
-  background-color: var(--background-color);
-  border-bottom: 2px solid var(--project-card-color);
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--gutter-medium);
-
-  h2 {
-    line-height: normal;
-    font-size: 1.8rem;
-    font-family: var(--logo-font);
-
-    @media only screen and (min-width: 768px) {
-      font-size: 2.8rem;
-    }
-  }
-
-  & ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--gutter-small);
-    line-height: normal;
-    font-family: var(--secondary-font-family);
-  }
-
-
-  & a {
-    color: var(--span-color);
-    font-weight: 500;
-    font-size: 1rem;
-
-    &:hover {
-      color: var(--span-color-hover);
-    }
-
-    @media only screen and (min-width: 768px) {
-      font-size: 1.2rem;
-    }
-  }
-
-  @media only screen and (min-width: 768px) {
-    border: none;
-  }
-}
-
 .active {
   span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
