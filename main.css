@@ -110,14 +110,29 @@ header {
   }
 
   .theme-switcher {
+    position: relative;
     display: flex;
     gap: var(--gutter-x-small);
+    border: 2px solid var(--span-color);
+    border-radius: 30px;
+    padding: .3em;
+  }
+
+  .switcher-btn {
+    position: absolute;
+    top: 3px;
+    background-color: antiquewhite;
+    height: 80%;
+    width: 40%;
+    border-radius: 30px;
+    background-color: var(--span-color);
+    transition: left 0.3s ease, right 0.3s ease;
   }
 
   .theme-toggle-btn {
     border: none;
     background-color: inherit;
-    width: 30px;
+    width: 100%;
     height: auto;
 
     & svg {

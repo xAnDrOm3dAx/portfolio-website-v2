@@ -1,10 +1,11 @@
 const themeToggleLight = document.querySelector("#theme-toggle-light");
 const themeToggleDark = document.querySelector("#theme-toggle-dark");
 const themeSwitcher = document.querySelector(".theme-switcher");
+const switcherBtn = document.querySelector(".switcher-btn");
 
 let darkMode = localStorage.getItem("darkMode");
 
-themeSwitcher.style.visibility = "visible";
+// themeSwitcher.style.visibility = "visible";
 
 //
 //
@@ -35,6 +36,9 @@ if (darkMode === "enabled") {
 function enableDarkMode() {
   // themeToggleLight.style.display = "flex";
   // themeToggleDark.style.display = "none";
+  // switcherBtn.style.left = "none";
+  switcherBtn.style.removeProperty("left");
+  switcherBtn.style.right = "3px";
   document.documentElement.classList.remove("light");
   document.documentElement.classList.add("dark");
   localStorage.setItem("darkMode", "enabled");
@@ -43,6 +47,8 @@ function enableDarkMode() {
 function disableDarkMode() {
   // themeToggleLight.style.display = "none";
   // themeToggleDark.style.display = "flex";
+  switcherBtn.style.removeProperty("right");
+  switcherBtn.style.left = "3px";
   document.documentElement.classList.remove("dark");
   document.documentElement.classList.add("light");
   localStorage.setItem("darkMode", "disabled");
@@ -103,3 +109,13 @@ hamburgerMenu.addEventListener("click", () => {
   });
   hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "flex" ? "none" : "flex";
 });
+
+//
+//
+//
+//
+//Switcher Button
+// const switcherBtn = document.querySelector(".switcher-btn");
+// switcherBtn.addEventListener("click", () => {
+
+// });
