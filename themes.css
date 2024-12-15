@@ -5,6 +5,8 @@
   --gutter-x-small: 0.6rem;
   --gutter-small: 1.2rem;
   --gutter-medium: 1.8rem;
+  /* --border-color: #88888f; */
+  --border-color: #7b7b7b;
 }
 
 :root,
