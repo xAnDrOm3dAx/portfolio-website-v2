@@ -121,7 +121,7 @@ header {
   }
 
   .switcher-btn {
-    display: none;
+    /* display: none; */
     position: absolute;
     top: 3px;
     background-color: antiquewhite;
