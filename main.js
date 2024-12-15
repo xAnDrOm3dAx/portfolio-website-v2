@@ -6,7 +6,7 @@ const switcherBtn = document.querySelector(".switcher-btn");
 let darkMode = localStorage.getItem("darkMode");
 
 // themeSwitcher.style.visibility = "visible";
-
+// switcherBtn.style.display = "block";
 //
 //
 //
@@ -25,30 +25,22 @@ if (darkMode === null) {
 //
 //
 // Apply the theme based on the darkMode setting
+
 if (darkMode === "enabled") {
   enableDarkMode();
 }
-// else {
-//   themeToggleLight.style.display = "none";
-//   themeToggleDark.style.display = "flex";
-// }
 
 function enableDarkMode() {
-  // themeToggleLight.style.display = "flex";
-  // themeToggleDark.style.display = "none";
-  // switcherBtn.style.left = "none";
-  switcherBtn.style.removeProperty("left");
-  switcherBtn.style.right = "3px";
+  switcherBtn.classList.remove("switch-to-light");
+  switcherBtn.classList.add("switch-to-dark");
   document.documentElement.classList.remove("light");
   document.documentElement.classList.add("dark");
   localStorage.setItem("darkMode", "enabled");
 }
 
 function disableDarkMode() {
-  // themeToggleLight.style.display = "none";
-  // themeToggleDark.style.display = "flex";
-  switcherBtn.style.removeProperty("right");
-  switcherBtn.style.left = "3px";
+  switcherBtn.classList.remove("switch-to-dark");
+  switcherBtn.classList.add("switch-to-light");
   document.documentElement.classList.remove("dark");
   document.documentElement.classList.add("light");
   localStorage.setItem("darkMode", "disabled");
@@ -109,13 +101,3 @@ hamburgerMenu.addEventListener("click", () => {
   });
   hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "flex" ? "none" : "flex";
 });
-
-//
-//
-//
-//
-//Switcher Button
-// const switcherBtn = document.querySelector(".switcher-btn");
-// switcherBtn.addEventListener("click", () => {
-
-// });
