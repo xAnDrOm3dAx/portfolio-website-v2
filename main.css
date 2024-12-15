@@ -133,7 +133,7 @@ header {
   }
 
   .switch-to-dark {
-    transform: translateX(calc(100% + 4px));
+    transform: translateX(calc(100% + 3px));
     /* display: block; */
     /* Move to the right side */
     /* right: 3px; */
