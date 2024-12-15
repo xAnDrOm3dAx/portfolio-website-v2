@@ -6,7 +6,7 @@ const switcherBtn = document.querySelector(".switcher-btn");
 let darkMode = localStorage.getItem("darkMode");
 
 // themeSwitcher.style.visibility = "visible";
-// switcherBtn.style.display = "block";
+switcherBtn.style.display = "block";
 //
 //
 //
