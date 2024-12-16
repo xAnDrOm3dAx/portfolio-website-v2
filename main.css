@@ -278,10 +278,10 @@ footer {
   gap: var(--gutter-small);
   padding: var(--gutter-small);
   border-top: 2px solid var(--border-color);
-  /* position: fixed;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: var(--background-color); */
+  background-color: var(--background-color);
 
   .icon-links-wrapper {
     display: flex;
