@@ -97,7 +97,7 @@ header {
       height: 3px;
       border-radius: 10px;
       background-color: var(--text-color);
-      /* transition: 250ms ease; */
+      transition: 250ms ease;
     }
 
     & span:nth-child(1) {
@@ -157,13 +157,12 @@ header {
     & svg {
       width: 100%;
       height: 100%;
-      color: var(--theme-btn-color);
+      color: var(--svg-color);
     }
   }
 }
 
 .hamburger-menu-active {
-  margin: 0 var(--gutter-small) 0 0;
   padding: var(--gutter-small) var(--gutter-small);
   height: 100vh;
   background-color: var(--background-color);
@@ -173,29 +172,18 @@ header {
   align-items: flex-end;
   gap: var(--gutter-medium);
 
-  h2 {
-    line-height: normal;
-    font-size: 1.8rem;
-    font-family: var(--logo-font);
-
-    @media only screen and (min-width: 768px) {
-      font-size: 2.8rem;
-    }
-  }
-
   & ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: var(--gutter-small);
     line-height: normal;
-    font-family: var(--secondary-font-family);
+    font-family: var(--primary-font-family);
   }
 
 
   & a {
     color: var(--span-color);
-    font-weight: 500;
     font-size: 1rem;
 
     &:hover {
@@ -237,7 +225,7 @@ main {
   }
 }
 
-.dev-experience-container {
+.dev-experience-container .employment-history-container {
   p>span {
     font-weight: 600;
   }
@@ -290,6 +278,10 @@ footer {
   gap: var(--gutter-small);
   padding: var(--gutter-small);
   border-top: 2px solid var(--border-color);
+  /* position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--background-color); */
 
   .icon-links-wrapper {
     display: flex;

@@ -18,7 +18,6 @@
   --box-shadow-color: #88888f;
   --span-color: #b46000;
   --span-color-hover: #111111;
-  --theme-btn-color: #111111;
 }
 
 :root.dark {
@@ -29,5 +28,4 @@
   --box-shadow-color: #7c7c7c;
   --span-color: #6ca8ec;
   --span-color-hover: #f8f5fb;
-  --theme-btn-color: #f4812f;
 }

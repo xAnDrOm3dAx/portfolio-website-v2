@@ -79,7 +79,7 @@ const observer = new IntersectionObserver(
 );
 
 const tags = document.querySelectorAll(
-  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .contact-container, .hamburger-menu-active"
+  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .employment-history-container, .contact-container, .hamburger-menu-active"
 );
 tags.forEach((tag) => {
   observer.observe(tag);
