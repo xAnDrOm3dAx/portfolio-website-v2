@@ -97,7 +97,7 @@ header {
       height: 3px;
       border-radius: 10px;
       background-color: var(--text-color);
-      transition: 250ms ease;
+      /* transition: 250ms ease; */
     }
 
     & span:nth-child(1) {
@@ -130,7 +130,7 @@ header {
     width: 22px;
     border-radius: 30px;
     background-color: var(--span-color);
-    transition: transform 250ms ease;
+    /* transition: transform 250ms ease; */
   }
 
   .switch-to-dark {
