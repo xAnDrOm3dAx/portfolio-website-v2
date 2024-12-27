@@ -40,9 +40,15 @@ svg {
   color: var(--svg-color);
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 section {
   margin: 0 var(--gutter-small);
-  padding: var(--gutter-small) 0;
+  padding: var(--gutter-medium) 0;
   border-bottom: 2px solid var(--border-color);
   display: flex;
   flex-direction: column;
@@ -260,10 +266,12 @@ main {
 }
 
 footer {
+  margin-top: auto;
+
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: var(--gutter-small);
   padding: var(--gutter-small);
   border-top: 2px solid var(--border-color);
