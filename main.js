@@ -79,7 +79,7 @@ const observer = new IntersectionObserver(
 );
 
 const tags = document.querySelectorAll(
-  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .employment-history-container, .contact-container, .hamburger-menu-active"
+  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .employment-history-container, .contact-container"
 );
 tags.forEach((tag) => {
   observer.observe(tag);
@@ -96,8 +96,11 @@ const sections = document.querySelectorAll("section");
 
 hamburgerMenu.addEventListener("click", () => {
   hamburgerMenu.classList.toggle("active");
-  sections.forEach((section) => {
-    section.style.display = section.style.display === "none" ? "flex" : "none";
-  });
-  hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "flex" ? "none" : "flex";
+  // sections.forEach((section) => {
+  //   section.style.display = section.style.display === "none" ? "flex" : "none";
+  // });
+  // hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "flex" ? "none" : "flex";
+  // hamburgerMenuActive.style.right = "0px";
+  // hamburgerMenuActive.style.right = hamburgerMenuActive.style.right === "0px" ? "-500px" : "0px";
+  hamburgerMenuActive.classList.toggle(".slide-in");
 });
