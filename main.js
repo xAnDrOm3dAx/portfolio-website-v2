@@ -6,7 +6,7 @@ const switcherBtn = document.querySelector(".switcher-btn");
 let darkMode = localStorage.getItem("darkMode");
 
 // themeSwitcher.style.visibility = "visible";
-switcherBtn.style.display = "block";
+// switcherBtn.style.display = "block";
 //
 //
 //
@@ -101,3 +101,9 @@ hamburgerMenu.addEventListener("click", () => {
   });
   hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "flex" ? "none" : "flex";
 });
+
+// document.addEventListener('click', (e) => {
+//   if (!hamburgerMenu.contains(e.target) && !hamburgerMenuActive.contains(e.target)) {
+//       hamburgerMenuActive.classList.style.display = ("none");
+//   }
+// });
