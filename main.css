@@ -40,6 +40,12 @@ svg {
   color: var(--svg-color);
 }
 
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 section {
   margin: 0 var(--gutter-small);
   padding: var(--gutter-small) 0 var(--gutter-medium);
@@ -269,6 +275,7 @@ footer {
   gap: var(--gutter-small);
   padding: var(--gutter-small);
   border-top: 2px solid var(--border-color);
+  margin-top: auto;
 
   .icon-links-wrapper {
     display: flex;
