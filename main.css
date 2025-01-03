@@ -49,7 +49,7 @@ svg {
 section {
   margin: 0 var(--gutter-small);
   padding: var(--gutter-small) 0 var(--gutter-medium);
-  border-bottom: 2px solid var(--border-color);
+  /* border-bottom: 2px solid var(--border-color); */
   display: flex;
   flex-direction: column;
   gap: var(--gutter-small);
