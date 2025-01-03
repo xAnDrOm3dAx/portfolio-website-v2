@@ -223,10 +223,8 @@ main {
   }
 }
 
-.dev-experience-container .employment-history-container {
-  p>span {
-    font-weight: 600;
-  }
+.dev-experience-container.animate>p>span {
+  font-weight: 600;
 }
 
 .language-icons {
