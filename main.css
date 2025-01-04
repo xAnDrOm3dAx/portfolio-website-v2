@@ -251,6 +251,7 @@ main {
   border-radius: 22px;
   padding: var(--gutter-medium);
   background-color: var(--project-card-color);
+  transition: 150ms ease;
 
   @media (min-width: 480px) {
     display: flex;
