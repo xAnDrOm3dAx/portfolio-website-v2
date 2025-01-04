@@ -1,6 +1,9 @@
 :root {
   --primary-font-family: "Roboto", sans-serif;
   --secondary-font-family: "Raleway", sans-serif;
+  --font-size-small: 0.9rem;
+  --font-size-regular: 1rem;
+  --font-size-large: 1.2rem;
   --logo-font: "Caveat", cursive, sans-serif;
   --gutter-x-small: 0.6rem;
   --gutter-small: 1.2rem;

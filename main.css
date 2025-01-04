@@ -26,6 +26,12 @@ h3 {
 
 p {
   font-family: var(--secondary-font-family);
+
+  font-size: var(--font-size-small);
+
+  @media (min-width: 480px) {
+    font-size: var(--font-size-regular);
+  }
 }
 
 p a {
@@ -183,15 +189,19 @@ header {
 
   & a {
     color: var(--span-color);
-    font-size: 1rem;
+    font-size: var(--font-size-small);
+
+    @media (min-width: 480px) {
+      font-size: var(--font-size-large);
+    }
 
     &:hover {
       color: var(--span-color-hover);
     }
 
-    @media only screen and (min-width: 768px) {
+    /* @media only screen and (min-width: 768px) {
       font-size: 1.2rem;
-    }
+    } */
   }
 
   @media only screen and (min-width: 768px) {
@@ -270,7 +280,7 @@ main {
   & div {
     display: flex;
     flex-direction: column;
-    gap: var(--gutter-x-small);
+    gap: 0.2em;
 
     @media (min-width: 480px) {
       flex: 2;
@@ -279,6 +289,14 @@ main {
       text-align: start;
     }
   }
+
+  /* >div>p {
+    font-size: var(--font-size-small);
+
+    @media (min-width: 480px) {
+      font-size: var(--font-size-regular);
+    }
+  } */
 
   &:hover {
     box-shadow: 0 0 10px 3px var(--box-shadow-color);
