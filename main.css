@@ -44,6 +44,7 @@ svg {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 300px;
 }
 
 section {
@@ -235,13 +236,10 @@ main {
 }
 
 .layout {
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); */
+  display: flex;
+  flex-direction: column;
   gap: var(--gutter-small);
-
-  @media (min-width: 768px) {
-    grid-template-columns: auto;
-  }
 }
 
 .project-wrapper {
@@ -250,8 +248,12 @@ main {
   padding: var(--gutter-medium);
   background-color: var(--project-card-color);
 
+  @media (min-width: 480px) {
+    display: flex;
+  }
+
   & figure {
-    @media (min-width: 768px) {
+    @media (min-width: 480px) {
       flex: 1;
     }
   }
@@ -260,7 +262,7 @@ main {
     width: 60%;
     height: auto;
 
-    @media (min-width: 768px) {
+    @media (min-width: 480px) {
       min-width: 200px;
     }
   }
@@ -270,7 +272,7 @@ main {
     flex-direction: column;
     gap: var(--gutter-x-small);
 
-    @media (min-width: 768px) {
+    @media (min-width: 480px) {
       flex: 2;
       justify-content: center;
       align-items: flex-start;
@@ -280,10 +282,6 @@ main {
 
   &:hover {
     box-shadow: 0 0 10px 3px var(--box-shadow-color);
-  }
-
-  @media (min-width: 768px) {
-    display: flex;
   }
 }
 
