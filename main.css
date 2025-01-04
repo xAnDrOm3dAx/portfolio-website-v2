@@ -189,7 +189,7 @@ header {
 
   & a {
     color: var(--span-color);
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-regular);
 
     @media (min-width: 480px) {
       font-size: var(--font-size-large);
@@ -198,10 +198,6 @@ header {
     &:hover {
       color: var(--span-color-hover);
     }
-
-    /* @media only screen and (min-width: 768px) {
-      font-size: 1.2rem;
-    } */
   }
 
   @media only screen and (min-width: 768px) {
