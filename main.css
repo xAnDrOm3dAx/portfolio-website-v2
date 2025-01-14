@@ -169,8 +169,8 @@ header {
 
 .hamburger-menu-active {
   padding: var(--gutter-small) var(--gutter-small);
-  /* height: 100vh;
-  height: 100dvh; */
+  height: 100vh;
+  height: 100dvh;
   background-color: var(--background-color);
   display: none;
   justify-content: flex-end;
