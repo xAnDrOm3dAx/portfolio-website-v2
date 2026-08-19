@@ -1,109 +1,182 @@
-const themeToggleLight = document.querySelector("#theme-toggle-light");
-const themeToggleDark = document.querySelector("#theme-toggle-dark");
-const themeSwitcher = document.querySelector(".theme-switcher");
-const switcherBtn = document.querySelector(".switcher-btn");
+(() => {
+  document.documentElement.classList.add("js");
+  const root = document.documentElement;
+  const storageKey = "theme";
+  const nav = document.querySelector("#site-nav");
+  const navToggle = document.querySelector(".nav-toggle");
+  const themeToggle = document.querySelector("[data-theme-toggle]");
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]:not([media])');
+  const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-let darkMode = localStorage.getItem("darkMode");
+  const getSystemTheme = () =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
-// themeSwitcher.style.visibility = "visible";
-// switcherBtn.style.display = "block";
-//
-//
-//
-//
-// Check if dark mode is not explicitly set in local storage
-if (darkMode === null) {
-  // Check for the user's system color scheme
-  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // Set darkMode based on the user's system settings
-  darkMode = prefersDarkMode ? "enabled" : "disabled";
-  localStorage.setItem("darkMode", darkMode);
-}
+  const getTheme = () => localStorage.getItem(storageKey) || getSystemTheme();
 
-//
-//
-//
-//
-// Apply the theme based on the darkMode setting
+  const syncThemeControls = (theme) => {
+    const isDark = theme === "dark";
+    if (themeToggle) {
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light theme" : "Switch to dark theme"
+      );
+    }
+    if (themeColorMeta) {
+      const styles = getComputedStyle(root);
+      themeColorMeta.setAttribute("content", styles.getPropertyValue("--theme-color").trim());
+    }
+  };
 
-if (darkMode === "enabled") {
-  enableDarkMode();
-}
+  const applyTheme = (theme, persist = false) => {
+    root.dataset.theme = theme;
+    root.style.colorScheme = theme;
+    if (persist) {
+      localStorage.setItem(storageKey, theme);
+    }
+    syncThemeControls(theme);
+  };
 
-function enableDarkMode() {
-  switcherBtn.classList.remove("switch-to-light");
-  switcherBtn.classList.add("switch-to-dark");
-  document.documentElement.classList.remove("light");
-  document.documentElement.classList.add("dark");
-  localStorage.setItem("darkMode", "enabled");
-}
+  applyTheme(getTheme());
 
-function disableDarkMode() {
-  switcherBtn.classList.remove("switch-to-dark");
-  switcherBtn.classList.add("switch-to-light");
-  document.documentElement.classList.remove("dark");
-  document.documentElement.classList.add("light");
-  localStorage.setItem("darkMode", "disabled");
-}
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+    if (!localStorage.getItem(storageKey)) {
+      applyTheme(event.matches ? "dark" : "light");
+    }
+  });
 
-themeToggleLight.addEventListener("click", () => {
-  disableDarkMode();
-});
+  themeToggle?.addEventListener("click", () => {
+    const nextTheme = getTheme() === "dark" ? "light" : "dark";
+    applyTheme(nextTheme, true);
+  });
 
-themeToggleDark.addEventListener("click", () => {
-  enableDarkMode();
-});
+  const getFocusable = () => {
+    const items = [];
+    if (navToggle) items.push(navToggle);
+    if (nav) items.push(...nav.querySelectorAll("a"));
+    return items.filter((item) => !item.hasAttribute("disabled"));
+  };
 
-//
-//
-//
-//
-//  Intersection Observer for scrolling animations
-const observer = new IntersectionObserver(
-  (animations) => {
-    animations.forEach((element) => {
-      if (element.isIntersecting) {
-        element.target.classList.add("animate");
-        element.target.classList.remove("undo-animate");
-        element.target.classList.remove("hide");
-        // } else {
-        //   element.target.classList.remove("animate");
-        //   element.target.classList.add("undo-animate");
+  const setMenuState = (open) => {
+    if (!nav || !navToggle) return;
+    nav.classList.toggle("is-open", open);
+    nav.inert = !open;
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("nav-open", open);
+
+    if (open) {
+      navLinks[0]?.focus();
+    }
+  };
+
+  if (nav && navToggle) {
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+    const syncNavForViewport = () => {
+      if (desktopQuery.matches) {
+        nav.inert = false;
+        nav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open menu");
+        document.body.classList.remove("nav-open");
+      } else if (navToggle.getAttribute("aria-expanded") !== "true") {
+        nav.inert = true;
+      }
+    };
+
+    syncNavForViewport();
+    desktopQuery.addEventListener("change", syncNavForViewport);
+
+    navToggle.addEventListener("click", () => {
+      const open = navToggle.getAttribute("aria-expanded") !== "true";
+      setMenuState(open);
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (!desktopQuery.matches) setMenuState(false);
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      const open = navToggle.getAttribute("aria-expanded") === "true";
+      if (!open || desktopQuery.matches) return;
+
+      if (event.key === "Escape") {
+        setMenuState(false);
+        navToggle.focus();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const focusable = getFocusable();
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     });
-  },
-  {
-    rootMargin: "-20px",
-    threshold: [0, 0.2, 1],
   }
-);
 
-const tags = document.querySelectorAll(
-  ".hero-container, .projects-container, .project-wrapper, .technologies-container, .soft-skills-container, .dev-experience-container, .employment-history-container, .contact-container, .hamburger-menu-active"
-);
-tags.forEach((tag) => {
-  observer.observe(tag);
-});
+  const sections = [...document.querySelectorAll("main section[id]")];
+  if (sections.length && navLinks.length && "IntersectionObserver" in window) {
+    const currentIdFor = (id) => {
+      if (id === "top") return null;
+      if (id === "experiments") return "work";
+      return id;
+    };
 
-//
-//
-//
-//
-// Toggle hamburger menu
-const hamburgerMenu = document.querySelector(".hamburger-menu");
-const hamburgerMenuActive = document.querySelector(".hamburger-menu-active");
-const sections = document.querySelectorAll("section");
+    const spy = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        const currentId = currentIdFor(visible.target.id);
+        navLinks.forEach((link) => {
+          const match = currentId && link.getAttribute("href") === `#${currentId}`;
+          if (match) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: [0, 0.25, 0.6] }
+    );
+    sections.forEach((section) => spy.observe(section));
+  }
 
-hamburgerMenu.addEventListener("click", () => {
-  hamburgerMenu.classList.toggle("active");
-  sections.forEach((section) => {
-    section.style.display = section.style.display === "none" ? "flex" : "none";
+  const revealItems = [...document.querySelectorAll(".reveal")];
+  const revealNow = () => {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  };
+
+  if (!revealItems.length || reduceMotion.matches || !("IntersectionObserver" in window)) {
+    revealNow();
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
+    );
+    revealItems.forEach((item) => revealObserver.observe(item));
+  }
+
+  reduceMotion.addEventListener("change", (event) => {
+    if (event.matches) revealNow();
   });
-  hamburgerMenuActive.style.display = hamburgerMenuActive.style.display === "flex" ? "none" : "flex";
-});
-
-// document.addEventListener('click', (e) => {
-//   if (!hamburgerMenu.contains(e.target) && !hamburgerMenuActive.contains(e.target)) {
-//       hamburgerMenuActive.classList.style.display = ("none");
-//   }
-// });
+})();

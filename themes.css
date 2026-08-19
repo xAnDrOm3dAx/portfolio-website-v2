@@ -1,34 +1,114 @@
 :root {
-  --primary-font-family: "Roboto", sans-serif;
-  --secondary-font-family: "Raleway", sans-serif;
-  --font-size-small: 0.9rem;
-  --font-size-regular: 1rem;
-  --font-size-large: 1.2rem;
-  --logo-font: "Caveat", cursive, sans-serif;
-  --gutter-x-small: 0.6rem;
-  --gutter-small: 1.2rem;
-  --gutter-medium: 1.8rem;
-  /* --border-color: #88888f; */
-  --border-color: #7b7b7b;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+  --font-logo: "Caveat", "Segoe Script", cursive;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1.0625rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: clamp(1.35rem, 1rem + 1.2vw, 1.75rem);
+  --font-size-2xl: clamp(1.75rem, 1.1rem + 2vw, 2.5rem);
+  --font-size-3xl: clamp(2.35rem, 1.2rem + 4.2vw, 4.35rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 6.5rem;
+  --page-pad: clamp(1.25rem, 4vw, 2.75rem);
+  --section-space: clamp(4.25rem, 8vw, 7.5rem);
+  --content-max: 70rem;
+  --header-height: 4.35rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.85rem;
+  --radius-lg: 1.35rem;
+  --radius-xl: 1.85rem;
+  --radius-full: 999px;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 500ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-soft: 0 18px 40px -24px var(--shadow-color);
+  --shadow-lift: 0 24px 50px -20px var(--shadow-color);
 }
 
 :root,
-:root.light {
-  --text-color: #111111;
-  --background-color: #f8f5fb;
-  --svg-color: #2f5392;
-  --project-card-color: #d2d3db;
-  --box-shadow-color: #88888f;
-  --span-color: #b46000;
-  --span-color-hover: #111111;
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f4efe8;
+  --color-bg-accent: #ebe3d8;
+  --color-surface: #fffbf6;
+  --color-surface-raised: #ffffff;
+  --color-text: #1c1917;
+  --color-text-muted: #534d46;
+  --color-accent: #8c3f00;
+  --color-accent-hover: #1c1917;
+  --color-on-accent: #fffbf6;
+  --color-ink: #1e2a44;
+  --color-on-ink: #f4efe8;
+  --color-border: #d8cfc3;
+  --color-border-strong: #b9ad9e;
+  --color-chip: #efe7dc;
+  --shadow-color: rgb(28 25 23 / 0.22);
+  --focus-ring: #8c3f00;
+  --visual-a-bg: #1e2a44;
+  --visual-a-fg: #e7c48a;
+  --visual-b-bg: #e7d9c6;
+  --visual-b-fg: #1e2a44;
+  --theme-color: #f4efe8;
 }
 
-:root.dark {
-  --text-color: #e0e0e0;
-  --background-color: #111111;
-  --svg-color: #e56910;
-  --project-card-color: #2f2f2f;
-  --box-shadow-color: #7c7c7c;
-  --span-color: #6ca8ec;
-  --span-color-hover: #f8f5fb;
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #12110f;
+  --color-bg-accent: #191714;
+  --color-surface: #1c1a17;
+  --color-surface-raised: #26221d;
+  --color-text: #f0eae2;
+  --color-text-muted: #c2b8ac;
+  --color-accent: #e2b36a;
+  --color-accent-hover: #f0eae2;
+  --color-on-accent: #1c1917;
+  --color-ink: #e2b36a;
+  --color-on-ink: #1c1917;
+  --color-border: #3a342c;
+  --color-border-strong: #6b6156;
+  --color-chip: #26221d;
+  --shadow-color: rgb(0 0 0 / 0.55);
+  --focus-ring: #e2b36a;
+  --visual-a-bg: #1a2236;
+  --visual-a-fg: #e2b36a;
+  --visual-b-bg: #2a241c;
+  --visual-b-fg: #f0eae2;
+  --theme-color: #12110f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --color-bg: #12110f;
+    --color-bg-accent: #191714;
+    --color-surface: #1c1a17;
+    --color-surface-raised: #26221d;
+    --color-text: #f0eae2;
+    --color-text-muted: #c2b8ac;
+    --color-accent: #e2b36a;
+    --color-accent-hover: #f0eae2;
+    --color-on-accent: #1c1917;
+    --color-ink: #e2b36a;
+    --color-on-ink: #1c1917;
+    --color-border: #3a342c;
+    --color-border-strong: #6b6156;
+    --color-chip: #26221d;
+    --shadow-color: rgb(0 0 0 / 0.55);
+    --focus-ring: #e2b36a;
+    --visual-a-bg: #1a2236;
+    --visual-a-fg: #e2b36a;
+    --visual-b-bg: #2a241c;
+    --visual-b-fg: #f0eae2;
+    --theme-color: #12110f;
+  }
 }

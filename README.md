@@ -1,38 +1,39 @@
-# Portfolio Project
+# Christopher Werkmeister — Portfolio
 
-Utilizing the skills that I have built on over the past year, I have created a portfolio to showcase all of the micro projects that I have completed as part of The Odin Project, Frontend Mentor, Scrimba, and other personal project ideas.
+A one-page portfolio for Christopher Werkmeister, a Brisbane-based front-end developer. The site is static HTML, CSS, and JavaScript, designed to work on GitHub Pages without a build step.
 
-## Table of contents
+## Links
 
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Continued development](#continued-development)
+- Live site: https://xandrom3dax.github.io/portfolio-website-v2
+- Repository: https://github.com/xAnDrOm3dAx/portfolio-website-v2
 
-## Overview
+## What’s here
 
-### Screenshot
+The homepage is the whole site:
 
-![screenshot](/images/screenshot.png)
+1. **Hero** — introduction, portrait, and primary calls to action
+2. **Selected work** — campaign and concept landing pages
+3. **Selected experiments** — smaller vanilla JavaScript builds
+4. **Experience** — BGW Group and structured study
+5. **About** — background, ways of working, and tools
+6. **Contact** — LinkedIn only
 
-### Links
+Older multi-page URLs under `html/` redirect to the matching homepage section.
 
-- Solution URL: https://github.com/xAnDrOm3dAx/portfolio-website-v2
-- Live Site URL: https://xandrom3dax.github.io/portfolio-website-v2
+## Built with
 
-## My process
+- Semantic HTML5
+- CSS custom properties, fluid type, Grid, and Flexbox
+- Vanilla JavaScript for theme, mobile navigation, and optional motion
+- Light and dark themes, with `prefers-color-scheme` until the visitor chooses
+- Mobile-first layout, keyboard access, and reduced-motion support
 
-### Built with
+## Local preview
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Vanilla Javascript
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
+Open `index.html` in a browser, or serve the folder:
 
-### Continued development
+```bash
+python3 -m http.server 4173
+```
 
-I would like to try and rebuild this website once I learn CSS and JS frameworks such as Bootstrap and React.
+Then visit `http://localhost:4173`.

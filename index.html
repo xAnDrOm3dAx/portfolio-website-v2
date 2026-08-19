@@ -1,250 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <title>Christopher Werkmeister | Front End Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="main.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christopher Werkmeister — Front-end Developer, Brisbane</title>
+  <meta name="description" content="Portfolio of Christopher Werkmeister, a Brisbane-based front-end developer who designs and builds responsive websites with HTML, CSS, and JavaScript.">
+  <link rel="canonical" href="https://xandrom3dax.github.io/portfolio-website-v2/">
+  <meta name="author" content="Christopher Werkmeister">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F4EFE8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Christopher Werkmeister — Front-end Developer, Brisbane">
+  <meta property="og:description" content="Selected landing pages, experiments, and professional experience from a self-taught front-end developer in Brisbane.">
+  <meta property="og:url" content="https://xandrom3dax.github.io/portfolio-website-v2/">
+  <meta property="og:image" content="https://xandrom3dax.github.io/portfolio-website-v2/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Christopher Werkmeister, front-end developer in Brisbane, Australia">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Christopher Werkmeister — Front-end Developer, Brisbane">
+  <meta name="twitter:description" content="Selected landing pages, experiments, and professional experience from a self-taught front-end developer in Brisbane.">
+  <meta name="twitter:image" content="https://xandrom3dax.github.io/portfolio-website-v2/images/og-image.jpg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css-reset.css">
   <link rel="stylesheet" href="themes.css">
-  <link rel="stylesheet" href="css-reset.css" />
+  <link rel="stylesheet" href="main.css">
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+        document.documentElement.style.colorScheme = theme;
+        var themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) {
+          themeColor.setAttribute("content", theme === "dark" ? "#12110F" : "#F4EFE8");
+        }
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
   <script src="main.js" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Christopher Werkmeister",
+      "jobTitle": "Front-end Developer",
+      "url": "https://xandrom3dax.github.io/portfolio-website-v2/",
+      "image": "https://xandrom3dax.github.io/portfolio-website-v2/images/christopher-1126.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brisbane",
+        "addressCountry": "AU"
+      },
+      "sameAs": [
+        "https://github.com/xAnDrOm3dAx",
+        "https://www.linkedin.com/in/christopher-werkmeister-9a5222265/",
+        "https://www.frontendmentor.io/profile/xAnDrOm3dAx/solutions"
+      ]
+    }
+  </script>
 </head>
-
 <body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+    <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="m4.93 4.93 1.41 1.41" />
+      <path d="m17.66 17.66 1.41 1.41" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+      <path d="m6.34 17.66-1.41 1.41" />
+      <path d="m19.07 4.93-1.41 1.41" />
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+    </symbol>
+    </defs>
+  </svg>
 
-  <div class="page-container">
-    <header>
-      <a href="index.html" class="logo">C.W.</a>
-      <nav class="nav-wrapper">
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="theme-switcher">
-          <div class="switcher-btn">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-          </div>
-          <button id="theme-toggle-light" class="theme-toggle-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-sun">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2" />
-              <path d="M12 20v2" />
-              <path d="m4.93 4.93 1.41 1.41" />
-              <path d="m17.66 17.66 1.41 1.41" />
-              <path d="M2 12h2" />
-              <path d="M20 12h2" />
-              <path d="m6.34 17.66-1.41 1.41" />
-              <path d="m19.07 4.93-1.41 1.41" />
-            </svg>
+  <div class="page">
+    <header class="site-header">
+      <div class="site-header__inner wrap">
+        <a class="logo" href="#top">C.W.<span class="visually-hidden"> Christopher Werkmeister, home</span></a>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+            <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-sun"></use></svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-moon"></use></svg>
           </button>
-          <button id="theme-toggle-dark" class="theme-toggle-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-moon">
-              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-            </svg>
+          <button class="icon-button nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
+            <span class="nav-toggle__bar"></span>
           </button>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <div class="hamburger-menu-active hide">
-      <ul>
-        <!-- <li><a href="html/tutorial-projects.html">Tutorial Projects</a></li> -->
-        <li><a href="html/projects.html">Featured Projects</a></li>
-        <!-- <li><a href="html/projects.html">The Odin Project</a></li> -->
-        <li><a href="https://www.frontendmentor.io/profile/xAnDrOm3dAx/solutions">Frontend Mentor</a></li>
-        <li><a href="https://github.com/xAnDrOm3dAx">Github</a></li>
-        <li><a href="index.html">Profile</a></li>
-        <!-- <li><a href="html/contact.html">Contact</a></li> -->
-
-      </ul>
-    </div>
-
-    <main>
-      <section class="hero-container hide">
-        <h1>Embark on a digital journey, with me!</h1>
-
-        <p>
-          Greetings! I'm Christopher Werkmeister, a dedicated and self-taught web developer residing in the vibrant city
-          of Brisbane, Australia. Enthusiastic about front-end development, I enjoy crafting digital experiences that
-          seamlessly blend creativity with functionality, and I'm on a relentless
-          pursuit to elevate my skills in the ever-evolving landscape of web technologies.
-        </p>
-
-        <!-- <p><a href="html/projects.html">View Projects →</a></p> -->
-
-        <p>
-          My journey through life has encompassed a diverse array of fields, including visual arts, sales & retail
-          management, warehousing & logistics, hospitality, tourism, construction, engineering, and remote aviation.
-          I'm known for my adaptability and versatility, embodying a creative mindset with a strong aesthetic sense and
-          an unyielding drive for self-improvement. I am passionate about crafting concise and efficient code,
-          approaching challenges with persistence, and constructing visually captivating websites using modern web
-          technologies.
-        </p>
-
-        <figure>
-          <img src="images/IMG_8289.jpeg" class="profile-photo" alt="Profile Photo" />
-          <figcaption class="photo-caption">Oh hello! It's me, Christopher!</figcaption>
-        </figure>
-
-        <p>
-          Beyond the digital realm, my interests span a range of pursuits, from embracing the great outdoors to
-          nurturing self-growth, exploring herbalism, engaging with technology, fostering arts and design, living
-          sustainably, and tending to my plants.
-        </p>
-      </section>
-
-      <section class="technologies-container hide">
-        <h2>Technologies</h2>
-        <p>
-          <span>Strong Foundation in:</span>
-        </p>
-        <div class="language-icons">
-          <div class="html"><img src="images/language-icons/html.png" alt="html icon"></div>
-          <div class="css"><img src="images/language-icons/css.png" alt="css icon"></div>
-          <div class="javascript"><img src="images/language-icons/javascript.png" alt="javascript icon"></div>
-          <div class="sass"><img src="images/language-icons/sass.png" alt="sass icon"></div>
-          <div class="git"><img src="images/language-icons/git.png" alt="git icon"></div>
-          <div class="github"><img src="images/language-icons/github.png" alt="github icon"></div>
-          <div class="photoshop"><img src="images/language-icons/photoshop.png" alt="photoshop icon"></div>
-          <div class="figma"><img src="images/language-icons/figma.png" alt="figma icon"></div>
+    <main id="main">
+      <section class="hero wrap" id="top" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow">Front-end developer · Brisbane, Australia</p>
+          <h1 id="hero-title">Front-end development with a designer’s eye.</h1>
+          <p class="hero__lede">I’m Christopher Werkmeister. I design and build responsive websites that balance visual hierarchy with concise, reliable HTML, CSS, and JavaScript.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#work">View selected work</a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/christopher-werkmeister-9a5222265/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+              <span class="visually-hidden">(opens in a new tab)</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+            </a>
+          </div>
+          <p class="hero__meta">Self-taught through structured curricula and professional delivery. Previously a web developer at BGW Group.</p>
         </div>
-        <p>
-          <span>Interest in:</span> CSS Frameworks, React, UX/UI Design.
-        </p>
+        <figure class="portrait">
+          <div class="portrait__frame">
+            <picture>
+              <source type="image/webp" srcset="images/christopher-480.webp 480w, images/christopher-800.webp 800w, images/christopher-1126.webp 1126w" sizes="(min-width: 900px) 28rem, 90vw">
+              <img src="images/christopher-800.jpg" srcset="images/christopher-480.jpg 480w, images/christopher-800.jpg 800w, images/christopher-1126.jpg 1126w" sizes="(min-width: 900px) 28rem, 90vw" width="1126" height="1126" alt="Christopher Werkmeister, a front-end developer based in Brisbane, wearing glasses and a tan corduroy shirt." fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+          <figcaption>Christopher Werkmeister, Brisbane.</figcaption>
+        </figure>
       </section>
 
-      <section class="soft-skills-container hide">
-        <h2>Key Soft Skills</h2>
-        <p>
-          Integrity, accountability, effective communication, critical thinking, project management, unwavering
-          perseverance, adept problem-solving, resourcefulness, meticulous attention to detail, strong teamwork,
-          creativity, adaptable nature, and a commendable work ethic.
-        </p>
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <header class="section__header reveal">
+            <p class="section-index">01</p>
+            <p class="eyebrow">Selected work</p>
+            <h2 id="work-title">Landing pages with intent</h2>
+            <p class="lede">Campaign and concept pages built from scratch — layout, type, and interaction, without a framework.</p>
+          </header>
+
+          <div class="featured-list">
+            <article class="featured-card reveal">
+              <div class="featured-card__visual" aria-hidden="true">
+                <p class="featured-card__index">01</p>
+                <p class="featured-card__title-lockup">Christmas in July</p>
+              </div>
+              <div class="featured-card__body">
+                <div class="chip-row">
+                  <span class="chip">Design</span>
+                  <span class="chip">Front-end</span>
+                  <span class="chip">BGW Group</span>
+                </div>
+                <h3>Christmas in July</h3>
+                <p>A promotional landing page designed and built for BGW Group. The brief called for a seasonal campaign page with a clear hierarchy, responsive layout, and JavaScript-enhanced interaction.</p>
+                <div class="meta-row">
+                  <span class="chip">HTML</span>
+                  <span class="chip">CSS</span>
+                  <span class="chip">JavaScript</span>
+                </div>
+                <div class="hero__actions">
+                  <a class="text-link" href="https://xandrom3dax.github.io/fully-loaded-landing-page/" target="_blank" rel="noopener noreferrer">
+                    Live site
+                    <span class="visually-hidden">(opens in a new tab)</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                  </a>
+                  <a class="text-link" href="https://github.com/xAnDrOm3dAx/fully-loaded-landing-page" target="_blank" rel="noopener noreferrer">
+                    GitHub repository
+                    <span class="visually-hidden">(opens in a new tab)</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="featured-card reveal">
+              <div class="featured-card__visual" aria-hidden="true">
+                <p class="featured-card__index">02</p>
+                <p class="featured-card__title-lockup">Concept Landing Page</p>
+              </div>
+              <div class="featured-card__body">
+                <div class="chip-row">
+                  <span class="chip">Design</span>
+                  <span class="chip">Front-end</span>
+                  <span class="chip">Personal</span>
+                </div>
+                <h3>Concept Landing Page</h3>
+                <p>A concept page built to demonstrate responsive composition, spacing, and visual hierarchy using only HTML and CSS.</p>
+                <div class="meta-row">
+                  <span class="chip">HTML</span>
+                  <span class="chip">CSS</span>
+                </div>
+                <div class="hero__actions">
+                  <a class="text-link" href="https://xandrom3dax.github.io/concept-landing-page/" target="_blank" rel="noopener noreferrer">
+                    Live site
+                    <span class="visually-hidden">(opens in a new tab)</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                  </a>
+                  <a class="text-link" href="https://github.com/xAnDrOm3dAx/concept-landing-page" target="_blank" rel="noopener noreferrer">
+                    GitHub repository
+                    <span class="visually-hidden">(opens in a new tab)</span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
-      <section class="dev-experience-container hide">
-        <h2>Development Experience</h2>
-        <p>
-          <span>Web Developer @ BGW Group</span>
-          <small>(October 2023 to March 2024)</small>
-        </p>
+      <section class="section section--alt" id="experiments" aria-labelledby="experiments-title">
+        <div class="wrap">
+          <header class="section__header reveal">
+            <p class="section-index">02</p>
+            <p class="eyebrow">Selected experiments</p>
+            <h2 id="experiments-title">Practice, tightened over time</h2>
+            <p class="lede">Smaller builds from The Odin Project and independent study — useful for reading how I structure interface behaviour in vanilla JavaScript.</p>
+          </header>
 
-        <p>
-          <a href="https://bgwgroup.com.au/"><span>BGW Group</span></a> is a diversified Australian family
-          owned distribution and supply chain management company with a portfolio of local and international wholesaling
-          businesses.
-          <br>
-          <br>
-          &#x2022; In collaboration with the development and marketing team, I was tasked to design / build landing
-          pages
-          and web components using HTML5, CSS3, Sass, Vanilla Javascript, and Adobe Creative Suite.
-          <br>
-          <br>
-          &#x2022; Exposure to SAP / Hybris CMS.
-        </p>
+          <div class="experiment-grid">
+            <article class="experiment-card reveal">
+              <div class="chip-row">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+              </div>
+              <h3>Rock Paper Scissors</h3>
+              <p>An Odin Project game, later revised to apply stronger layout and scripting patterns.</p>
+              <div class="hero__actions">
+                <a class="text-link" href="https://xandrom3dax.github.io/rock-paper-scissors/" target="_blank" rel="noopener noreferrer">
+                  Live site
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+                <a class="text-link" href="https://github.com/xAnDrOm3dAx/rock-paper-scissors" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+              </div>
+            </article>
 
-        <p>
-          <span>The Odin Project</span>
-          <small>(February 2023 to Present)</small>
-        </p>
+            <article class="experiment-card reveal">
+              <div class="chip-row">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+              </div>
+              <h3>Calculator</h3>
+              <p>A compact arithmetic calculator covering addition, subtraction, multiplication, and division.</p>
+              <div class="hero__actions">
+                <a class="text-link" href="https://xandrom3dax.github.io/calculator-app/" target="_blank" rel="noopener noreferrer">
+                  Live site
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+                <a class="text-link" href="https://github.com/xAnDrOm3dAx/calculator-app" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+              </div>
+            </article>
 
-        <p>
-          <a href="https://www.theodinproject.com"><span>The Odin Project</span></a> is a self paced, open source,
-          online curriculum that teaches foundational
-          to advanced topics relating to modern web development.
-        </p>
+            <article class="experiment-card reveal">
+              <div class="chip-row">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+              </div>
+              <h3>Etch-a-Sketch</h3>
+              <p>A drawing grid built for The Odin Project.</p>
+              <p class="experiment-card__note">Not optimised for mobile.</p>
+              <div class="hero__actions">
+                <a class="text-link" href="https://xandrom3dax.github.io/etch-a-sketch/" target="_blank" rel="noopener noreferrer">
+                  Live site
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+                <a class="text-link" href="https://github.com/xAnDrOm3dAx/etch-a-sketch" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+              </div>
+            </article>
 
-        <p>
-          <span>Scrimba</span>
-          <small>(February 2023 to Present)</small>
-        </p>
+            <article class="experiment-card reveal">
+              <div class="chip-row">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+              </div>
+              <h3>Unit Converter</h3>
+              <p>Converts metres and feet, litres and gallons, and kilograms and pounds.</p>
+              <div class="hero__actions">
+                <a class="text-link" href="https://xandrom3dax.github.io/unit-converter/" target="_blank" rel="noopener noreferrer">
+                  Live site
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+                <a class="text-link" href="https://github.com/xAnDrOm3dAx/unit-converter" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+              </div>
+            </article>
 
-        <p>
-          <a href="https://scrimba.com"><span>Scrimba</span></a> is an interactive code-learning platform with over a
-          million users from all over the world.
-          They feature highly interactive and engaging courses with a focus on web development. I completed the Learn
-          Javascript course alongside The Odin
-          Project.
-        </p>
-
-        <p>
-          <span>Exercism</span>
-          <small>(February 2023 to Present)</small>
-        </p>
-
-        <p>
-          <a href="https://exercism.org"><span>Exercism</span></a> is all about the learning journey, not the
-          destination. They believe the process
-          and enjoyment of learning is more important than absolute factual correctness. I used this resource for
-          Javascript coding challenges.
-        </p>
-
-        <p>
-          <span>Frontend Mentor</span>
-          <small>(February 2023 to Present)</small>
-        </p>
-
-        <p>
-          <a href="https://www.frontendmentor.io"><span>Frontend Mentor</span></a> leans heavily on front end
-          development. The user solves real-world HTML,
-          CSS and JavaScript challenges whilst working to professional designs.
-        </p>
+            <article class="experiment-card reveal">
+              <div class="chip-row">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+              </div>
+              <h3>Password Generator</h3>
+              <p>Generates random passwords with a slider for length.</p>
+              <div class="hero__actions">
+                <a class="text-link" href="https://xandrom3dax.github.io/password-generator/" target="_blank" rel="noopener noreferrer">
+                  Live site
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+                <a class="text-link" href="https://github.com/xAnDrOm3dAx/password-generator" target="_blank" rel="noopener noreferrer">
+                  GitHub
+                  <span class="visually-hidden">(opens in a new tab)</span>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-arrow"></use></svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
-      <section class="employment-history-container hide">
-        <h2>Employment History</h2>
-        <p>
-          For details of my employment history, please find me on
-          <a href="https://www.linkedin.com/in/christopher-werkmeister-9a5222265/"><span>Linkedin</span></a>.
-        </p>
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="wrap">
+          <header class="section__header reveal">
+            <p class="section-index">03</p>
+            <p class="eyebrow">Experience</p>
+            <h2 id="experience-title">Professional delivery, then deliberate practice</h2>
+            <p class="lede">A short in-house role building production landing pages, supported by a structured path through modern front-end fundamentals.</p>
+          </header>
+
+          <ol class="timeline">
+            <li class="timeline__item reveal">
+              <h3>Web Developer</h3>
+              <p class="timeline__meta"><a href="https://bgwgroup.com.au/" target="_blank" rel="noopener noreferrer">BGW Group<span class="visually-hidden"> (opens in a new tab)</span></a> · October 2023 – March 2024</p>
+              <p>BGW Group is a diversified Australian family-owned distribution and supply chain company with a portfolio of local and international wholesaling businesses.</p>
+              <ul>
+                <li>Designed and built landing pages and web components with HTML5, CSS3, Sass, JavaScript, and Adobe Creative Suite, working with development and marketing.</li>
+                <li>Gained exposure to SAP / Hybris CMS.</li>
+              </ul>
+            </li>
+            <li class="timeline__item reveal prose-links">
+              <h3>Continuing development</h3>
+              <p class="timeline__meta">Structured study from 2023</p>
+              <p>Front-end foundations and deliberate practice through <a href="https://www.theodinproject.com" target="_blank" rel="noopener noreferrer">The Odin Project<span class="visually-hidden"> (opens in a new tab)</span></a>, <a href="https://scrimba.com" target="_blank" rel="noopener noreferrer">Scrimba<span class="visually-hidden"> (opens in a new tab)</span></a>, <a href="https://exercism.org" target="_blank" rel="noopener noreferrer">Exercism<span class="visually-hidden"> (opens in a new tab)</span></a>, and <a href="https://www.frontendmentor.io" target="_blank" rel="noopener noreferrer">Frontend Mentor<span class="visually-hidden"> (opens in a new tab)</span></a> — covering curriculum-based web development, interactive JavaScript courses, coding challenges, and professional design implementations.</p>
+            </li>
+          </ol>
+        </div>
       </section>
 
-      <!-- <section class="contact-container">
-        <h2>Contact</h2>
-        <p>
-          For direct messaging, and to find details of my employment history, please find me on
-          <a href="https://www.linkedin.com/in/christopher-werkmeister-9a5222265/"><span> Linkedin</span></a>.
-          Alternatively, you can contact me via email at knolls.attempt.0u@icloud.com
-        </p>
-      </section> -->
+      <section class="section section--alt" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <header class="section__header reveal">
+            <p class="section-index">04</p>
+            <p class="eyebrow">About</p>
+            <h2 id="about-title">A creative path into front-end</h2>
+          </header>
+
+          <div class="about-grid">
+            <div class="about-copy reveal">
+              <p>I’m a self-taught front-end developer with a background across visual arts, sales and retail management, warehousing and logistics, hospitality, tourism, construction, engineering, and remote aviation. That range shows up as adaptability, a strong aesthetic sense, and persistence when a problem needs another pass.</p>
+              <p class="about-copy__muted">Away from the screen I’m outdoors, tending plants, reading about herbalism, and paying attention to craft, design, and more sustainable ways of living.</p>
+            </div>
+            <div class="reveal">
+              <p class="timeline__meta ways-label">Ways of working</p>
+              <ul class="soft-skills">
+                <li class="chip">Integrity</li>
+                <li class="chip">Accountability</li>
+                <li class="chip">Communication</li>
+                <li class="chip">Critical thinking</li>
+                <li class="chip">Project management</li>
+                <li class="chip">Perseverance</li>
+                <li class="chip">Problem-solving</li>
+                <li class="chip">Resourcefulness</li>
+                <li class="chip">Attention to detail</li>
+                <li class="chip">Teamwork</li>
+                <li class="chip">Creativity</li>
+                <li class="chip">Adaptability</li>
+                <li class="chip">Work ethic</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="capability-grid follow-block">
+            <article class="capability-card reveal">
+              <h3>Building with</h3>
+              <div class="chip-row">
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">Sass</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+              </div>
+            </article>
+            <article class="capability-card reveal">
+              <h3>Design tools</h3>
+              <div class="chip-row">
+                <span class="chip">Figma</span>
+                <span class="chip">Photoshop</span>
+              </div>
+            </article>
+            <article class="capability-card reveal">
+              <h3>Exploring next</h3>
+              <div class="chip-row">
+                <span class="chip">CSS frameworks</span>
+                <span class="chip">React</span>
+                <span class="chip">UX / UI design</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="wrap">
+          <div class="contact-panel reveal">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Let’s talk on LinkedIn</h2>
+            <p>Project conversations, collaboration, and employment history are on LinkedIn — that is the best place to reach me.</p>
+            <a class="btn btn--primary" href="https://www.linkedin.com/in/christopher-werkmeister-9a5222265/" target="_blank" rel="noopener noreferrer">
+              Message on LinkedIn
+              <span class="visually-hidden">(opens in a new tab)</span>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <div class="icon-links-wrapper">
-        <a href="https://www.linkedin.com/in/christopher-werkmeister-9a5222265/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-linkedin">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-            <rect width="4" height="12" x="2" y="9" />
-            <circle cx="4" cy="4" r="2" />
-          </svg>
-        </a>
-        <a href="https://github.com/xAnDrOm3dAx">
-          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-github">
-            <path
-              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-            <path d="M9 18c-4.51 2-5-2-7-2" />
-          </svg>
-        </a>
+    <footer class="footer">
+      <div class="footer__inner wrap">
+        <a class="logo" href="#top">C.W.<span class="visually-hidden"> Back to top</span></a>
+        <div class="footer__links">
+          <a class="social-link" href="https://www.linkedin.com/in/christopher-werkmeister-9a5222265/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-linkedin"></use></svg>
+            <span class="visually-hidden">LinkedIn (opens in a new tab)</span>
+          </a>
+          <a class="social-link" href="https://github.com/xAnDrOm3dAx" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon--lg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-github"></use></svg>
+            <span class="visually-hidden">GitHub (opens in a new tab)</span>
+          </a>
+          <a href="https://www.frontendmentor.io/profile/xAnDrOm3dAx/solutions" target="_blank" rel="noopener noreferrer">
+            Frontend Mentor
+            <span class="visually-hidden">(opens in a new tab)</span>
+          </a>
+        </div>
+        <p class="footer__meta">
+          <span>Brisbane, Australia</span>
+          <span>© 2026 Christopher Werkmeister</span>
+        </p>
       </div>
     </footer>
-
   </div>
-
 </body>
-
 </html>
