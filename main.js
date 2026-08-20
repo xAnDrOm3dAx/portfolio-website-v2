@@ -1,7 +1,10 @@
 (() => {
-  document.documentElement.classList.add("js");
   const root = document.documentElement;
   const storageKey = "theme";
+  const themeColors = {
+    light: "#F4EFE8",
+    dark: "#12110F",
+  };
   const desktopNav = document.querySelector("#site-nav");
   const mobileNav = document.querySelector("#mobile-nav");
   const navToggle = document.querySelector(".nav-toggle");
@@ -28,8 +31,7 @@
       );
     }
     if (themeColorMeta) {
-      const styles = getComputedStyle(root);
-      themeColorMeta.setAttribute("content", styles.getPropertyValue("--theme-color").trim());
+      themeColorMeta.setAttribute("content", themeColors[theme] || themeColors.light);
     }
   };
 
@@ -42,7 +44,7 @@
     syncThemeControls(theme);
   };
 
-  applyTheme(getTheme());
+  syncThemeControls(getTheme());
 
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
     if (!localStorage.getItem(storageKey)) {

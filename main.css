@@ -829,6 +829,7 @@ section[id],
   color: var(--visual-a-fg);
 }
 
+.contact-panel h1,
 .contact-panel h2 {
   font-family: var(--font-display);
   font-size: var(--font-size-2xl);

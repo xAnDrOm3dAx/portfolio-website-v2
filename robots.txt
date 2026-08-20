@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xandrom3dax.github.io/portfolio-website-v2/sitemap.xml

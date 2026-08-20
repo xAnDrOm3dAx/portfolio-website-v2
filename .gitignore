@@ -1,0 +1,4 @@
+.qa/
+.cursor/
+.DS_Store
+node_modules/
