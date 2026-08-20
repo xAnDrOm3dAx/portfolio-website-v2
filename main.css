@@ -107,7 +107,6 @@ svg {
   position: sticky;
   top: 0;
   z-index: 40;
-  height: var(--header-height);
   border-bottom: 1px solid var(--color-border);
   background: color-mix(in srgb, var(--color-bg) 88%, transparent);
   -webkit-backdrop-filter: blur(18px);
@@ -266,6 +265,39 @@ html:not(.js) .theme-toggle {
   background: var(--color-accent);
 }
 
+.mobile-nav {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--duration-normal) var(--ease-standard);
+}
+
+.mobile-nav.is-open {
+  max-height: 20rem;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding-block: var(--space-2) var(--space-4);
+}
+
+.mobile-nav a {
+  display: block;
+  padding-block: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a[aria-current="page"] {
+  color: var(--color-accent);
+}
+
 .js .nav-toggle {
   display: inline-flex;
 }
@@ -278,10 +310,6 @@ html:not(.js) .theme-toggle {
 }
 
 @media (max-width: 767.98px) {
-  html:not(.js) .site-header {
-    height: auto;
-  }
-
   html:not(.js) .site-header__inner {
     flex-wrap: wrap;
     height: auto;
@@ -301,49 +329,11 @@ html:not(.js) .theme-toggle {
   }
 
   .js .site-nav {
-    position: fixed;
-    inset: 0;
-    z-index: 30;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: calc(var(--header-height) + var(--space-6)) var(--page-pad) var(--space-8);
-    background: color-mix(in srgb, var(--color-bg) 96%, transparent);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateX(100%);
-    transition: transform var(--duration-slow) var(--ease-standard),
-      visibility var(--duration-slow) var(--ease-standard);
-  }
-
-  .js .site-nav.is-open {
-    visibility: visible;
-    pointer-events: auto;
-    transform: none;
-  }
-
-  .js .site-nav ul {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--space-5);
-  }
-
-  .js .site-nav a {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 8vw, 3rem);
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: -0.03em;
-  }
-
-  .js .site-nav a[aria-current="page"]::after {
     display: none;
   }
 
-  body.nav-open {
-    overflow: hidden;
+  .js .mobile-nav {
+    display: block;
   }
 }
 

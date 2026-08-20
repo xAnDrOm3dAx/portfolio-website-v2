@@ -2,11 +2,15 @@
   document.documentElement.classList.add("js");
   const root = document.documentElement;
   const storageKey = "theme";
-  const nav = document.querySelector("#site-nav");
+  const desktopNav = document.querySelector("#site-nav");
+  const mobileNav = document.querySelector("#mobile-nav");
   const navToggle = document.querySelector(".nav-toggle");
   const themeToggle = document.querySelector("[data-theme-toggle]");
   const themeColorMeta = document.querySelector('meta[name="theme-color"]:not([media])');
-  const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
+  const navLinks = [
+    ...(desktopNav ? [...desktopNav.querySelectorAll('a[href^="#"]')] : []),
+    ...(mobileNav ? [...mobileNav.querySelectorAll('a[href^="#"]')] : []),
+  ];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const getSystemTheme = () =>
@@ -51,37 +55,21 @@
     applyTheme(nextTheme, true);
   });
 
-  const getFocusable = () => {
-    const items = [];
-    if (navToggle) items.push(navToggle);
-    if (nav) items.push(...nav.querySelectorAll("a"));
-    return items.filter((item) => !item.hasAttribute("disabled"));
-  };
-
   const setMenuState = (open) => {
-    if (!nav || !navToggle) return;
-    nav.classList.toggle("is-open", open);
-    nav.inert = !open;
+    if (!mobileNav || !navToggle) return;
+    mobileNav.classList.toggle("is-open", open);
+    mobileNav.inert = !open;
     navToggle.setAttribute("aria-expanded", String(open));
     navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    document.body.classList.toggle("nav-open", open);
-
-    if (open) {
-      navLinks[0]?.focus();
-    }
   };
 
-  if (nav && navToggle) {
+  if (mobileNav && navToggle) {
     const desktopQuery = window.matchMedia("(min-width: 768px)");
     const syncNavForViewport = () => {
       if (desktopQuery.matches) {
-        nav.inert = false;
-        nav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open menu");
-        document.body.classList.remove("nav-open");
+        setMenuState(false);
       } else if (navToggle.getAttribute("aria-expanded") !== "true") {
-        nav.inert = true;
+        mobileNav.inert = true;
       }
     };
 
@@ -93,36 +81,24 @@
       setMenuState(open);
     });
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (!desktopQuery.matches) setMenuState(false);
-      });
+    mobileNav.addEventListener("click", (event) => {
+      if (event.target.closest("a") && !desktopQuery.matches) {
+        setMenuState(false);
+      }
     });
 
     document.addEventListener("keydown", (event) => {
       const open = navToggle.getAttribute("aria-expanded") === "true";
+      if (!open || desktopQuery.matches || event.key !== "Escape") return;
+      setMenuState(false);
+      navToggle.focus();
+    });
+
+    document.addEventListener("click", (event) => {
+      const open = navToggle.getAttribute("aria-expanded") === "true";
       if (!open || desktopQuery.matches) return;
-
-      if (event.key === "Escape") {
-        setMenuState(false);
-        navToggle.focus();
-        return;
-      }
-
-      if (event.key !== "Tab") return;
-
-      const focusable = getFocusable();
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
+      if (mobileNav.contains(event.target) || navToggle.contains(event.target)) return;
+      setMenuState(false);
     });
   }
 
