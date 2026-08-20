@@ -22,8 +22,6 @@ Featured production work:
 
 - [Next Wave Cancer Rehab](https://www.nextwavecancerrehab.com.au/) — 2026 six-page marketing and referral website ([repository](https://github.com/xAnDrOm3dAx/next-wave-cancer-rehab-website-rev2))
 
-Older multi-page URLs under `html/` redirect to the matching homepage section.
-
 ## Built with
 
 - Semantic HTML5

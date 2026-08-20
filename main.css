@@ -752,14 +752,14 @@ section[id],
 
 .timeline__item a,
 .prose-links a,
-.footer a:not(.logo) {
+.footer a {
   color: var(--color-accent);
   font-weight: 700;
 }
 
 .timeline__item a:hover,
 .prose-links a:hover,
-.footer a:not(.logo):hover {
+.footer a:hover {
   color: var(--color-accent-hover);
 }
 
