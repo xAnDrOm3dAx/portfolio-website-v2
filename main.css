@@ -613,6 +613,10 @@ section[id],
   max-width: 8ch;
 }
 
+.featured-card__title-lockup--wide {
+  max-width: 12ch;
+}
+
 .featured-card__body {
   display: grid;
   align-content: center;

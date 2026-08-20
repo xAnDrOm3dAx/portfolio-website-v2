@@ -12,11 +12,15 @@ A one-page portfolio for Christopher Werkmeister, a Brisbane-based front-end dev
 The homepage is the whole site:
 
 1. **Hero** — introduction, portrait, and primary calls to action
-2. **Selected work** — campaign and concept landing pages
+2. **Selected work** — production client website and a campaign landing page
 3. **Selected experiments** — smaller vanilla JavaScript builds
-4. **Experience** — BGW Group and structured study
-5. **About** — background, ways of working, and tools
+4. **Experience** — Next Wave Cancer Rehab, BGW Group, and structured study
+5. **About** — background, ways of working, and demonstrated capabilities
 6. **Contact** — LinkedIn only
+
+Featured production work:
+
+- [Next Wave Cancer Rehab](https://www.nextwavecancerrehab.com.au/) — 2026 six-page marketing and referral website ([repository](https://github.com/xAnDrOm3dAx/next-wave-cancer-rehab-website-rev2))
 
 Older multi-page URLs under `html/` redirect to the matching homepage section.
 
@@ -27,6 +31,7 @@ Older multi-page URLs under `html/` redirect to the matching homepage section.
 - Vanilla JavaScript for theme, mobile navigation, and optional motion
 - Light and dark themes, with `prefers-color-scheme` until the visitor chooses
 - Mobile-first layout, keyboard access, and reduced-motion support
+- Accessibility-focused markup, SEO and social metadata, and image optimisation
 
 ## Local preview
 
