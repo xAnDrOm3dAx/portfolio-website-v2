@@ -279,7 +279,7 @@ html:not(.js) .theme-toggle {
 .mobile-nav ul {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 0;
   padding-block: var(--space-2) var(--space-4);
 }
@@ -290,6 +290,7 @@ html:not(.js) .theme-toggle {
   font-size: var(--font-size-sm);
   font-weight: 600;
   letter-spacing: 0.04em;
+  text-align: right;
   color: var(--color-text-muted);
 }
 
