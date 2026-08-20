@@ -1,6 +1,6 @@
 # Christopher Werkmeister — Portfolio
 
-A one-page portfolio for Christopher Werkmeister, a Brisbane-based front-end developer. The site is static HTML, CSS, and JavaScript, designed to work on GitHub Pages without a build step.
+A one-page portfolio for Christopher Werkmeister, a Sunshine Coast-based front-end developer. The site is static HTML, CSS, and JavaScript, designed to work on GitHub Pages without a build step.
 
 ## Links
 
